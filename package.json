@@ -1,0 +1,39 @@
+{
+  "name": "ecommerce-app",
+  "version": "0.0.1",
+  "description": "eCommerce Platform",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "standard --fix"
+  },
+  "author": "llorente_oscar@hotmail.com",
+  "dependencies": {
+    "@nuxt/content": "^1.14.0",
+    "@nuxtjs/axios": "^5.13.1",
+    "@nuxtjs/pwa": "^3.3.5",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "core-js": "^3.9.1",
+    "debug": "^4.3.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "fs-extra": "^10.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.3.0",
+    "mongoose": "^5.12.13",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nuxt": "^2.15.3",
+    "serverless-http": "^2.7.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
+    "standard": "^16.0.3"
+  }
+}

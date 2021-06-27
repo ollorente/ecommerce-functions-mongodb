@@ -26,12 +26,12 @@ export default {
 					link: '/cuenta/login',
 					icon: null,
 				},
-				{
-					id: '3',
-					title: 'Mis compras',
-					link: '/cuenta/mis-compras',
-					icon: null,
-				},
+				// {
+				// 	id: '3',
+				// 	title: 'Mis compras',
+				// 	link: '/cuenta/mis-compras',
+				// 	icon: null,
+				// },
 				{
 					id: '4',
 					title: '',

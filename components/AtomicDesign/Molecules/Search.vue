@@ -20,6 +20,8 @@ export default {
 		async searchQ() {
 			console.log(`Buscando... ${this.q}`)
 			this.q = ''
+
+			await this.$router.replace('/buscar')
 		},
 	},
 }

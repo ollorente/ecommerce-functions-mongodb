@@ -1,16 +1,16 @@
 <template>
   <nav>
     <div class="container">
-      <div class="nav__top">
-        <a href="/" class="nav__top-left brand">eCommerce</a>
-        <div class="nav__top-middle">
-          <Search :search="q" />
+      <div class="nav__top grid col-1 col-sm-4 col-md-5">
+        <a href="/" class="nav__top-left brand span-1 span-sm-1 span-md-1">eCommerce</a>
+        <div class="nav__top-middle span-1 span-sm-2 span-md-2">
+          <Search />
         </div>
-        <div class="nav__top-right">
-          <Options :options="options" />
+        <div class="nav__top-right span-1 span-sm-2 span-md-2">
+          <LoginMenu :menu="menu" />
         </div>
       </div>
-      <div class="nav__bottom">
+      <div class="nav__bottom" v-if="show">
         <div class="nav__bottom-left">
           <Location :location="location" />
         </div>
@@ -18,7 +18,7 @@
           <MainMenu :menu="menu" />
         </div>
         <div class="nav__bottom-right">
-          <LoginMenu :menu="menu" />
+          <Options :options="options" />
         </div>
       </div>
       <Megamenu :menus="menus" v-if="show" />
@@ -47,13 +47,31 @@ export default {
   data() {
     return {
       show: false,
+      options: {
+        id: '1',
+        title: 'Ofertas',
+        link: '/ofertas',
+      },
+      location: {
+        id: '1',
+        title: 'Ofertas',
+        link: '/ofertas',
+      },
+      menu: {
+        id: '1',
+        title: 'Ofertas',
+        link: '/ofertas',
+      },
+      menus: [
+        {
+          id: '1',
+          title: 'Ofertas',
+          link: '/ofertas',
+        },
+      ],
     }
   },
-  methods: {
-    async getCategories() {
-      this.show = !this.show
-    },
-  },
+  methods: {},
 }
 </script>
 

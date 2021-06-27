@@ -1,10 +1,12 @@
 <template>
 	<ul class="nav__navbar">
 		<li class="nav__item">
-			<a href="#" class="nav__link" @click="showCategories">Categorías</a>
+			<span class="nav__link" @click="getCategories">Categorías</span>
 		</li>
 		<li class="nav__item" v-for="menu in main_menus" :key="menu.id">
-			<nuxt-link :to="`${menu.link}`" class="nav__link">{{ menu.title }}</nuxt-link>
+			<nuxt-link :to="`${menu.link}`" class="nav__link">{{
+				menu.title
+			}}</nuxt-link>
 		</li>
 	</ul>
 </template>
@@ -16,6 +18,7 @@ export default {
 	components: {},
 	data() {
 		return {
+			show: false,
 			main_menus: [
 				{
 					id: '1',
@@ -45,7 +48,11 @@ export default {
 			],
 		}
 	},
-	methods: {},
+	methods: {
+		async getCategories() {
+			this.show = !this.show
+		},
+	},
 }
 </script>
 

@@ -12,13 +12,14 @@
 import TitleH1 from '~/components/AtomicDesign/Atoms/TitleH1'
 
 export default {
+	layout: 'main',
 	components: {
 		TitleH1,
 	},
 	data() {
 		return {
 			title1: {
-				name: 'Producto',
+				name: 'Moda',
 				class: 'title h3',
 			},
 		}

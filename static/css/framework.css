@@ -14,18 +14,18 @@ main {
 
 h1 {
   font-size: 2em;
-  margin: .67em 0;
+  margin: 0.67em 0;
 }
 
 hr {
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
 
 pre {
-  font-family: monospace,monospace;
+  font-family: monospace, monospace;
   font-size: 1em;
 }
 
@@ -37,15 +37,18 @@ abbr[title] {
   border-bottom: none;
   text-decoration: underline;
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
-b, strong {
+b,
+strong {
   font-weight: bolder;
 }
 
-code, kbd, samp {
-  font-family: monospace,monospace;
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
   font-size: 1em;
 }
 
@@ -53,7 +56,8 @@ small {
   font-size: 80%;
 }
 
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -61,52 +65,67 @@ sub, sup {
 }
 
 sub {
-  bottom: -.25em;
+  bottom: -0.25em;
 }
 
 sup {
-  top: -.5em;
+  top: -0.5em;
 }
 
 img {
   border-style: none;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
 }
 
-button, input {
+button,
+input {
   overflow: visible;
 }
 
-button, select {
+button,
+select {
   text-transform: none;
 }
 
-[type=button], [type=reset], [type=submit], button {
+[type='button'],
+[type='reset'],
+[type='submit'],
+button {
   -webkit-appearance: button;
 }
 
-[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner,
+button::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
-[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring {
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring,
+button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
 fieldset {
-  padding: .35em .75em .625em;
+  padding: 0.35em 0.75em 0.625em;
 }
 
 legend {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -122,22 +141,24 @@ textarea {
   overflow: auto;
 }
 
-[type=checkbox], [type=radio] {
+[type='checkbox'],
+[type='radio'] {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
-[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type=search] {
+[type='search'] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type=search]::-webkit-search-decoration {
+[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -170,63 +191,63 @@ template {
 }
 
 .col-1 {
-  -ms-grid-columns: (1fr)[1];
-      grid-template-columns: repeat(1, 1fr);
+  -ms-grid-columns: (1fr) [1];
+  grid-template-columns: repeat(1, 1fr);
 }
 
 .col-2 {
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (1fr) [2];
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .col-3 {
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr) [3];
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .col-4 {
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (1fr) [4];
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .col-5 {
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-columns: (1fr) [5];
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .col-6 {
-  -ms-grid-columns: (1fr)[6];
-      grid-template-columns: repeat(6, 1fr);
+  -ms-grid-columns: (1fr) [6];
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .col-7 {
-  -ms-grid-columns: (1fr)[7];
-      grid-template-columns: repeat(7, 1fr);
+  -ms-grid-columns: (1fr) [7];
+  grid-template-columns: repeat(7, 1fr);
 }
 
 .col-8 {
-  -ms-grid-columns: (1fr)[8];
-      grid-template-columns: repeat(8, 1fr);
+  -ms-grid-columns: (1fr) [8];
+  grid-template-columns: repeat(8, 1fr);
 }
 
 .col-9 {
-  -ms-grid-columns: (1fr)[9];
-      grid-template-columns: repeat(9, 1fr);
+  -ms-grid-columns: (1fr) [9];
+  grid-template-columns: repeat(9, 1fr);
 }
 
 .col-10 {
-  -ms-grid-columns: (1fr)[10];
-      grid-template-columns: repeat(10, 1fr);
+  -ms-grid-columns: (1fr) [10];
+  grid-template-columns: repeat(10, 1fr);
 }
 
 .col-11 {
-  -ms-grid-columns: (1fr)[11];
-      grid-template-columns: repeat(11, 1fr);
+  -ms-grid-columns: (1fr) [11];
+  grid-template-columns: repeat(11, 1fr);
 }
 
 .col-12 {
-  -ms-grid-columns: (1fr)[12];
-      grid-template-columns: repeat(12, 1fr);
+  -ms-grid-columns: (1fr) [12];
+  grid-template-columns: repeat(12, 1fr);
 }
 
 .span-1 {
@@ -279,52 +300,52 @@ template {
 
 @media (min-width: 576px) {
   .col-xs-1 {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
+    -ms-grid-columns: (1fr) [1];
+    grid-template-columns: repeat(1, 1fr);
   }
   .col-xs-2 {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: (1fr) [2];
+    grid-template-columns: repeat(2, 1fr);
   }
   .col-xs-3 {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (1fr) [3];
+    grid-template-columns: repeat(3, 1fr);
   }
   .col-xs-4 {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: (1fr) [4];
+    grid-template-columns: repeat(4, 1fr);
   }
   .col-xs-5 {
-    -ms-grid-columns: (1fr)[5];
-        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-columns: (1fr) [5];
+    grid-template-columns: repeat(5, 1fr);
   }
   .col-xs-6 {
-    -ms-grid-columns: (1fr)[6];
-        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-columns: (1fr) [6];
+    grid-template-columns: repeat(6, 1fr);
   }
   .col-xs-7 {
-    -ms-grid-columns: (1fr)[7];
-        grid-template-columns: repeat(7, 1fr);
+    -ms-grid-columns: (1fr) [7];
+    grid-template-columns: repeat(7, 1fr);
   }
   .col-xs-8 {
-    -ms-grid-columns: (1fr)[8];
-        grid-template-columns: repeat(8, 1fr);
+    -ms-grid-columns: (1fr) [8];
+    grid-template-columns: repeat(8, 1fr);
   }
   .col-xs-9 {
-    -ms-grid-columns: (1fr)[9];
-        grid-template-columns: repeat(9, 1fr);
+    -ms-grid-columns: (1fr) [9];
+    grid-template-columns: repeat(9, 1fr);
   }
   .col-xs-10 {
-    -ms-grid-columns: (1fr)[10];
-        grid-template-columns: repeat(10, 1fr);
+    -ms-grid-columns: (1fr) [10];
+    grid-template-columns: repeat(10, 1fr);
   }
   .col-xs-11 {
-    -ms-grid-columns: (1fr)[11];
-        grid-template-columns: repeat(11, 1fr);
+    -ms-grid-columns: (1fr) [11];
+    grid-template-columns: repeat(11, 1fr);
   }
   .col-xs-12 {
-    -ms-grid-columns: (1fr)[12];
-        grid-template-columns: repeat(12, 1fr);
+    -ms-grid-columns: (1fr) [12];
+    grid-template-columns: repeat(12, 1fr);
   }
   .span-xs-1 {
     grid-column: span 1;
@@ -366,52 +387,52 @@ template {
 
 @media (min-width: 768px) {
   .col-sm-1 {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
+    -ms-grid-columns: (1fr) [1];
+    grid-template-columns: repeat(1, 1fr);
   }
   .col-sm-2 {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: (1fr) [2];
+    grid-template-columns: repeat(2, 1fr);
   }
   .col-sm-3 {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (1fr) [3];
+    grid-template-columns: repeat(3, 1fr);
   }
   .col-sm-4 {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: (1fr) [4];
+    grid-template-columns: repeat(4, 1fr);
   }
   .col-sm-5 {
-    -ms-grid-columns: (1fr)[5];
-        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-columns: (1fr) [5];
+    grid-template-columns: repeat(5, 1fr);
   }
   .col-sm-6 {
-    -ms-grid-columns: (1fr)[6];
-        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-columns: (1fr) [6];
+    grid-template-columns: repeat(6, 1fr);
   }
   .col-sm-7 {
-    -ms-grid-columns: (1fr)[7];
-        grid-template-columns: repeat(7, 1fr);
+    -ms-grid-columns: (1fr) [7];
+    grid-template-columns: repeat(7, 1fr);
   }
   .col-sm-8 {
-    -ms-grid-columns: (1fr)[8];
-        grid-template-columns: repeat(8, 1fr);
+    -ms-grid-columns: (1fr) [8];
+    grid-template-columns: repeat(8, 1fr);
   }
   .col-sm-9 {
-    -ms-grid-columns: (1fr)[9];
-        grid-template-columns: repeat(9, 1fr);
+    -ms-grid-columns: (1fr) [9];
+    grid-template-columns: repeat(9, 1fr);
   }
   .col-sm-10 {
-    -ms-grid-columns: (1fr)[10];
-        grid-template-columns: repeat(10, 1fr);
+    -ms-grid-columns: (1fr) [10];
+    grid-template-columns: repeat(10, 1fr);
   }
   .col-sm-11 {
-    -ms-grid-columns: (1fr)[11];
-        grid-template-columns: repeat(11, 1fr);
+    -ms-grid-columns: (1fr) [11];
+    grid-template-columns: repeat(11, 1fr);
   }
   .col-sm-12 {
-    -ms-grid-columns: (1fr)[12];
-        grid-template-columns: repeat(12, 1fr);
+    -ms-grid-columns: (1fr) [12];
+    grid-template-columns: repeat(12, 1fr);
   }
   .span-sm-1 {
     grid-column: span 1;
@@ -453,52 +474,52 @@ template {
 
 @media (min-width: 992px) {
   .col-md-1 {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
+    -ms-grid-columns: (1fr) [1];
+    grid-template-columns: repeat(1, 1fr);
   }
   .col-md-2 {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: (1fr) [2];
+    grid-template-columns: repeat(2, 1fr);
   }
   .col-md-3 {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (1fr) [3];
+    grid-template-columns: repeat(3, 1fr);
   }
   .col-md-4 {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: (1fr) [4];
+    grid-template-columns: repeat(4, 1fr);
   }
   .col-md-5 {
-    -ms-grid-columns: (1fr)[5];
-        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-columns: (1fr) [5];
+    grid-template-columns: repeat(5, 1fr);
   }
   .col-md-6 {
-    -ms-grid-columns: (1fr)[6];
-        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-columns: (1fr) [6];
+    grid-template-columns: repeat(6, 1fr);
   }
   .col-md-7 {
-    -ms-grid-columns: (1fr)[7];
-        grid-template-columns: repeat(7, 1fr);
+    -ms-grid-columns: (1fr) [7];
+    grid-template-columns: repeat(7, 1fr);
   }
   .col-md-8 {
-    -ms-grid-columns: (1fr)[8];
-        grid-template-columns: repeat(8, 1fr);
+    -ms-grid-columns: (1fr) [8];
+    grid-template-columns: repeat(8, 1fr);
   }
   .col-md-9 {
-    -ms-grid-columns: (1fr)[9];
-        grid-template-columns: repeat(9, 1fr);
+    -ms-grid-columns: (1fr) [9];
+    grid-template-columns: repeat(9, 1fr);
   }
   .col-md-10 {
-    -ms-grid-columns: (1fr)[10];
-        grid-template-columns: repeat(10, 1fr);
+    -ms-grid-columns: (1fr) [10];
+    grid-template-columns: repeat(10, 1fr);
   }
   .col-md-11 {
-    -ms-grid-columns: (1fr)[11];
-        grid-template-columns: repeat(11, 1fr);
+    -ms-grid-columns: (1fr) [11];
+    grid-template-columns: repeat(11, 1fr);
   }
   .col-md-12 {
-    -ms-grid-columns: (1fr)[12];
-        grid-template-columns: repeat(12, 1fr);
+    -ms-grid-columns: (1fr) [12];
+    grid-template-columns: repeat(12, 1fr);
   }
   .span-md-1 {
     grid-column: span 1;
@@ -540,52 +561,52 @@ template {
 
 @media (min-width: 1200px) {
   .col-lg-1 {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
+    -ms-grid-columns: (1fr) [1];
+    grid-template-columns: repeat(1, 1fr);
   }
   .col-lg-2 {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: (1fr) [2];
+    grid-template-columns: repeat(2, 1fr);
   }
   .col-lg-3 {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (1fr) [3];
+    grid-template-columns: repeat(3, 1fr);
   }
   .col-lg-4 {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: (1fr) [4];
+    grid-template-columns: repeat(4, 1fr);
   }
   .col-lg-5 {
-    -ms-grid-columns: (1fr)[5];
-        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-columns: (1fr) [5];
+    grid-template-columns: repeat(5, 1fr);
   }
   .col-lg-6 {
-    -ms-grid-columns: (1fr)[6];
-        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-columns: (1fr) [6];
+    grid-template-columns: repeat(6, 1fr);
   }
   .col-lg-7 {
-    -ms-grid-columns: (1fr)[7];
-        grid-template-columns: repeat(7, 1fr);
+    -ms-grid-columns: (1fr) [7];
+    grid-template-columns: repeat(7, 1fr);
   }
   .col-lg-8 {
-    -ms-grid-columns: (1fr)[8];
-        grid-template-columns: repeat(8, 1fr);
+    -ms-grid-columns: (1fr) [8];
+    grid-template-columns: repeat(8, 1fr);
   }
   .col-lg-9 {
-    -ms-grid-columns: (1fr)[9];
-        grid-template-columns: repeat(9, 1fr);
+    -ms-grid-columns: (1fr) [9];
+    grid-template-columns: repeat(9, 1fr);
   }
   .col-lg-10 {
-    -ms-grid-columns: (1fr)[10];
-        grid-template-columns: repeat(10, 1fr);
+    -ms-grid-columns: (1fr) [10];
+    grid-template-columns: repeat(10, 1fr);
   }
   .col-lg-11 {
-    -ms-grid-columns: (1fr)[11];
-        grid-template-columns: repeat(11, 1fr);
+    -ms-grid-columns: (1fr) [11];
+    grid-template-columns: repeat(11, 1fr);
   }
   .col-lg-12 {
-    -ms-grid-columns: (1fr)[12];
-        grid-template-columns: repeat(12, 1fr);
+    -ms-grid-columns: (1fr) [12];
+    grid-template-columns: repeat(12, 1fr);
   }
   .span-lg-1 {
     grid-column: span 1;
@@ -627,52 +648,52 @@ template {
 
 @media (min-width: 1400px) {
   .col-xl-1 {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
+    -ms-grid-columns: (1fr) [1];
+    grid-template-columns: repeat(1, 1fr);
   }
   .col-xl-2 {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: (1fr) [2];
+    grid-template-columns: repeat(2, 1fr);
   }
   .col-xl-3 {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (1fr) [3];
+    grid-template-columns: repeat(3, 1fr);
   }
   .col-xl-4 {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: (1fr) [4];
+    grid-template-columns: repeat(4, 1fr);
   }
   .col-xl-5 {
-    -ms-grid-columns: (1fr)[5];
-        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-columns: (1fr) [5];
+    grid-template-columns: repeat(5, 1fr);
   }
   .col-xl-6 {
-    -ms-grid-columns: (1fr)[6];
-        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-columns: (1fr) [6];
+    grid-template-columns: repeat(6, 1fr);
   }
   .col-xl-7 {
-    -ms-grid-columns: (1fr)[7];
-        grid-template-columns: repeat(7, 1fr);
+    -ms-grid-columns: (1fr) [7];
+    grid-template-columns: repeat(7, 1fr);
   }
   .col-xl-8 {
-    -ms-grid-columns: (1fr)[8];
-        grid-template-columns: repeat(8, 1fr);
+    -ms-grid-columns: (1fr) [8];
+    grid-template-columns: repeat(8, 1fr);
   }
   .col-xl-9 {
-    -ms-grid-columns: (1fr)[9];
-        grid-template-columns: repeat(9, 1fr);
+    -ms-grid-columns: (1fr) [9];
+    grid-template-columns: repeat(9, 1fr);
   }
   .col-xl-10 {
-    -ms-grid-columns: (1fr)[10];
-        grid-template-columns: repeat(10, 1fr);
+    -ms-grid-columns: (1fr) [10];
+    grid-template-columns: repeat(10, 1fr);
   }
   .col-xl-11 {
-    -ms-grid-columns: (1fr)[11];
-        grid-template-columns: repeat(11, 1fr);
+    -ms-grid-columns: (1fr) [11];
+    grid-template-columns: repeat(11, 1fr);
   }
   .col-xl-12 {
-    -ms-grid-columns: (1fr)[12];
-        grid-template-columns: repeat(12, 1fr);
+    -ms-grid-columns: (1fr) [12];
+    grid-template-columns: repeat(12, 1fr);
   }
   .span-xl-1 {
     grid-column: span 1;

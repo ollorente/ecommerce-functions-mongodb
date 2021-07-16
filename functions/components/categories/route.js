@@ -10,4 +10,8 @@ router
     .route("/:category")
     .get(CategoryGet)
 
+router
+    .route("/:category/products")
+    .get(CategoryGet)
+
 module.exports = router

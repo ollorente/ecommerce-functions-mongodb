@@ -10,7 +10,12 @@
         />
       </div>
       <div
-        class="dynamic-carousel__item-content with-discount card-body span-1 span-xs-2 span-sm-2 span-md-3"
+        class="
+          dynamic-carousel__item-content
+          with-discount
+          card-body
+          span-1 span-xs-2 span-sm-2 span-md-3
+        "
       >
         <TitleH3 :title3="title3" />
         <div class="dynamic-carousel__pill-container" v-if="product.offer">

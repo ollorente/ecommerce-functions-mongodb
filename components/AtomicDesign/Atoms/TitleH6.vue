@@ -1,5 +1,7 @@
 <template>
-  <h6 :class="title6.class ? title6.class : ''">{{ title6.name ? title6.name : '' }}</h6>
+  <h6 :class="title6.class ? title6.class : ''">
+    {{ title6.name ? title6.name : '' }}
+  </h6>
 </template>
 
 <script>

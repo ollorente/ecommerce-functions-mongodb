@@ -34,7 +34,7 @@ form {
 	padding: var(--unit);
 	background: var(--white);
 	border: solid 1px calc(var(--light) / 2);
-	border-radius: calc(var(--unit) / 2);
+	/* border-radius: calc(var(--unit) / 2); */
 	display: flex;
 	align-items: center;
 }

@@ -12,6 +12,7 @@
 import TitleH1 from '~/components/AtomicDesign/Atoms/TitleH1'
 
 export default {
+	layout: 'main',
 	components: {
 		TitleH1,
 	},

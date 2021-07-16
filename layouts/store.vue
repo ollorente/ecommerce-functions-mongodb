@@ -1,32 +1,24 @@
 <template>
   <div>
     <HeaderMain />
-    <div class="container">
-      <main>
-        <Nuxt />
-      </main>
-    </div>
+    <HeaderMenu />
+    <Nuxt />
     <TheFooter />
   </div>
 </template>
 
 <script>
 import HeaderMain from '~/components/AtomicDesign/Molecules/HeaderMain'
+import HeaderMenu from '~/components/AtomicDesign/Molecules/HeaderMenu'
 import TheFooter from '~/components/AtomicDesign/Organisms/TheFooter'
 
 export default {
   components: {
     HeaderMain,
+    HeaderMenu,
     TheFooter,
-  },
-  data() {
-    return {}
   },
 }
 </script>
 
-<style scoped>
-main {
-  min-height: calc(100vh - 20rem) !important;
-}
-</style>
+<style scoped></style>

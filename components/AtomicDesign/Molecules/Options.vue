@@ -1,7 +1,9 @@
 <template>
   <ul class="nav__navbar">
     <li class="nav__item" v-for="menu in option_menus" :key="menu.id">
-      <nuxt-link :to="`${menu.link}`" class="nav__link">{{ menu.title }}</nuxt-link>
+      <nuxt-link :to="`${menu.link}`" class="nav__link">{{
+        menu.title
+      }}</nuxt-link>
     </li>
   </ul>
 </template>

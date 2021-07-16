@@ -11,15 +11,20 @@
 				<div class="dynamic-carousel__pill-container" v-if="cart.offer">
 					<small class="bg-success text-white">OFERTA DEL DÍA</small>
 				</div>
-				<span class="text-dark text-through" v-if="cart.oldprice">$ {{ cart.oldprice }}</span>
+				<span class="text-dark text-through" v-if="cart.oldprice"
+					>$ {{ cart.oldprice }}</span
+				>
 				<div class="text-dark">
-					<span class="dynamic-carousel__price"><span>$ {{ cart.price }}</span></span>
+					<span class="dynamic-carousel__price"
+						><span>$ {{ cart.price }}</span></span
+					>
 					<div
 						class="dynamic-carousel__price-additional-info"
 						v-if="cart.oldprice"
 					>
 						<sup class="dynamic-carousel__discount"
-							>{{ parseInt( 100 - ( (cart.price * 100) / cart.oldprice ) ) }}% OFF</sup
+							>{{ parseInt(100 - (cart.price * 100) / cart.oldprice) }}%
+							OFF</sup
 						>
 					</div>
 				</div>

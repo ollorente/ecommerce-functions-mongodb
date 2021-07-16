@@ -1,0 +1,22 @@
+const ProductModel = require("../model")
+const Interface = require("../dto")
+
+module.exports = async (req, res, next) => {
+  const {
+    product
+  } = req.params
+
+  let result
+  try {
+    result = await ProductModel.findOne({
+      _id: product
+    })
+
+    res.status(200).json({
+      error: false,
+      data: result ? Interface.Interface(result) : null
+    })
+  } catch (error) {
+    next(error)
+  }
+}

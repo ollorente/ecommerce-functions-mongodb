@@ -3,7 +3,8 @@
     <TitleH1 :title1="title1" />
 
     <p>
-      Si ya tiene una cuenta con nosotros, inicie sesión en la <a href="/login">página de inicio de sesión</a>.
+      Si ya tiene una cuenta con nosotros, inicie sesión en la
+      <a href="/login">página de inicio de sesión</a>.
     </p>
 
     <form

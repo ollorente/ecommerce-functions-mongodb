@@ -1,0 +1,136 @@
+<template>
+  <div class="header-info">
+    <div class="container">
+      <div class="header-info__container">
+        <nuxt-link :to="`/${info.link}`" class="header-info__left">
+          <img :src="info.image" :alt="info.name" class="avatar-store" />
+          <div class="header-info__left__body">
+            <span class="header-info__left__body--title">{{ info.name }}</span>
+            <span class="header-info__left__body--p">{{ info.location }}</span>
+            <span class="header-info__left__body--p">
+              <i class="fas fa-star text-primary"></i>
+              <i class="fas fa-star text-primary"></i>
+              <i class="fas fa-star text-primary"></i>
+              <i class="fas fa-star-half-alt text-primary"> </i
+              ><i class="far fa-star text-primary"></i>
+              {{ info.countReviews }} reviews
+            </span>
+          </div>
+        </nuxt-link>
+        <div class="header-info__right">
+          <span class="header-info__right__local">{{ info.distance }} m</span>
+          <span
+            class="header-info__right__status"
+            :class="info.isOpen ? 'text-success' : 'text-error'"
+            >{{ info.isOpen ? 'Abierto' : 'Cerrado' }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HeaderInfo',
+  props: ['headerInfo'],
+  data() {
+    return {
+      info: {
+        name: 'Centro Comercial Oulet Bima',
+        link: 'bima',
+        image:
+          'https://res.cloudinary.com/dbszizqh4/image/upload/v1562279383/admin/movhmbszggr4460xwh7f.webp',
+        location: 'Autopista Norte # 206-45',
+        distance: 375,
+        countReviews: 105,
+        isOpen: true,
+      },
+    }
+  },
+}
+</script>
+
+<style>
+.header {
+  margin: 0;
+  padding: var(--unit) 0;
+  background: var(--primary);
+  z-index: 110;
+}
+
+.header-info {
+  position: -webkit-sticky;
+  position: sticky;
+  margin: 0;
+  padding: 0;
+  top: 56px;
+  background: var(--white);
+  border-bottom: solid 2px var(--light);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.header-info__container {
+  height: calc(var(--unit) * 3.75);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-info__left {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 8rem);
+  color: var(--dark);
+}
+
+.avatar-store {
+  width: calc(var(--unit) * 4);
+  height: calc(var(--unit) * 4);
+}
+
+.header-info__left__body {
+  width: 100%;
+  margin-left: var(--unit);
+}
+
+.header-info__left__body--title {
+  display: block;
+  margin: calc(var(--unit) / 2) 0;
+  font-size: calc(var(--unit) * 1.25);
+  font-weight: 600;
+  width: calc(100% - 1rem);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.header-info__left__body--p {
+  display: block;
+  margin-bottom: calc(var(--unit) / 2);
+  font-size: var(--unit);
+  width: calc(100% - 1rem);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.header-info__right {
+  font-size: var(--unit);
+  width: 8rem;
+}
+
+.header-info__right__local {
+  display: block;
+  text-align: right;
+  margin: calc(var(--unit) / 2) 0;
+}
+
+.header-info__right__status {
+  display: block;
+  text-align: right;
+  margin: calc(var(--unit) / 2) 0;
+  font-weight: 600;
+}
+</style>

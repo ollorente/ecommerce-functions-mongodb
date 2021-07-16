@@ -19,6 +19,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.7.2/css/all.css' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap' },
       { rel: 'stylesheet', href: '/css/framework.css' },
       { rel: 'stylesheet', href: '/css/style.css' }
     ]

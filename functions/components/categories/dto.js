@@ -20,6 +20,7 @@ module.exports.RefInterface = db => {
         id: db._id,
         storeId: db.storeId,
         name: db.name,
+        metaTitle: db.metaTitle,
         image: db.image,
         isTop: db.isTop,
         sortOrder: db.sortOrder,

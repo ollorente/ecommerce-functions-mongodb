@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const pkg = require('../../package.json')
 
+const AdminCategoryRoute = require("../components/categories/adminRoute")
 const CategoryRoute = require("../components/categories/route")
 
 router.get('/', function (req, res, next) {
@@ -12,6 +13,8 @@ router.get('/', function (req, res, next) {
 		version: pkg.version,
 	})
 })
+
+router.use("/admin/categories", AdminCategoryRoute)
 
 router.use("/categories", CategoryRoute)
 

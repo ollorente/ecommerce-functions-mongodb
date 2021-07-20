@@ -138,6 +138,18 @@ main {
   text-decoration: line-through;
 }
 
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
 .bg-primary {
   background: var(--primary);
 }

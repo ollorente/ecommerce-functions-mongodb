@@ -103,7 +103,7 @@ export default {
           },
         })
         .then(async (response) => {
-          console.log(response)
+          console.log(response.data.data)
         })
     },
   },

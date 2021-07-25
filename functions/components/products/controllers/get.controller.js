@@ -1,5 +1,5 @@
+const ProductDTO = require("../dto")
 const ProductModel = require("../model")
-const Interface = require("../dto")
 
 module.exports = async (req, res, next) => {
   const {
@@ -9,12 +9,13 @@ module.exports = async (req, res, next) => {
   let result
   try {
     result = await ProductModel.findOne({
-      _id: product
+      _id: product,
+      isDelete: false,
     })
 
     res.status(200).json({
       error: false,
-      data: result ? Interface.Interface(result) : null
+      data: result ? ProductDTO.Interface(result) : null
     })
   } catch (error) {
     next(error)

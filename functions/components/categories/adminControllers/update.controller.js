@@ -1,3 +1,4 @@
+const CategoryDTO = require('../dto')
 const CategoryModel = require('../model')
 const sluglify = require('../../../utils/sluglify')
 
@@ -10,7 +11,7 @@ module.exports = async (req, res, next) => {
   })
 
   if (!categoryData)
-    return res.status(404).json({
+    return res.status(400).json({
       error: true,
       mesage: 'Category not exists.',
     })
@@ -29,7 +30,7 @@ module.exports = async (req, res, next) => {
 
     res.status(200).json({
       error: false,
-      data: result,
+      data: CategoryDTO.Interface(result),
     })
   } catch (error) {
     next(error)

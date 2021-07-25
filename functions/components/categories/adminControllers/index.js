@@ -1,7 +1,7 @@
 module.exports = {
-  AdminCategoryCreate: require("./adminCreate.controller"),
-  AdminCategoryGet: require("./adminGet.controller"),
-  AdminCategoryList: require("./adminList.controller"),
-  AdminCategoryRemove: require("./adminRemove.controller"),
-  AdminCategoryUpdate: require("./adminUpdate.controller"),
+  Create: require("./create.controller"),
+  Get: require("./get.controller"),
+  List: require("./list.controller"),
+  Remove: require("./remove.controller"),
+  Update: require("./update.controller"),
 }

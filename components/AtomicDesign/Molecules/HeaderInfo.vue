@@ -2,52 +2,39 @@
   <div class="header-info">
     <div class="container">
       <div class="header-info__container">
-        <nuxt-link :to="`/${info.link}`" class="header-info__left">
-          <img :src="info.image" :alt="info.name" class="avatar-store" />
+        <nuxt-link :to="`/${store.url}`" class="header-info__left">
+          <img :src="store.logo ? store.logo : `https://res.cloudinary.com/dbszizqh4/image/upload/v1562473096/logo_default.png`" :alt="store.name" class="avatar-store" />
           <div class="header-info__left__body">
-            <span class="header-info__left__body--title">{{ info.name }}</span>
-            <span class="header-info__left__body--p">{{ info.location }}</span>
+            <span class="header-info__left__body--title">{{ store.name }}</span>
+            <span class="header-info__left__body--p" v-if="store.location">{{ store.location }}</span>
             <span class="header-info__left__body--p">
               <i class="fas fa-star text-primary"></i>
               <i class="fas fa-star text-primary"></i>
               <i class="fas fa-star text-primary"></i>
               <i class="fas fa-star-half-alt text-primary"> </i
               ><i class="far fa-star text-primary"></i>
-              {{ info.countReviews }} reviews
+              {{ store.countReviews ? store.countReviews : 0 }} reviews
             </span>
           </div>
         </nuxt-link>
         <div class="header-info__right">
-          <span class="header-info__right__local">{{ info.distance }} m</span>
+          <span class="header-info__right__local">{{ store.distance ? store.distance : 0 }} m</span>
           <span
             class="header-info__right__status"
-            :class="info.isOpen ? 'text-success' : 'text-error'"
-            >{{ info.isOpen ? 'Abierto' : 'Cerrado' }}</span
+            :class="store.isOpen ? 'text-success' : 'text-error'"
+            >{{ store.isOpen ? 'Abierto' : 'Cerrado' }}</span
           >
         </div>
       </div>
     </div>
+    <pre class="container" hidden>{{ $data }}</pre>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HeaderInfo',
-  props: ['headerInfo'],
-  data() {
-    return {
-      info: {
-        name: 'Centro Comercial Oulet Bima',
-        link: 'bima',
-        image:
-          'https://res.cloudinary.com/dbszizqh4/image/upload/v1562279383/admin/movhmbszggr4460xwh7f.webp',
-        location: 'Autopista Norte # 206-45',
-        distance: 375,
-        countReviews: 105,
-        isOpen: true,
-      },
-    }
-  },
+  props: ['store'],
 }
 </script>
 

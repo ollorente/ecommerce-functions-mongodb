@@ -1,5 +1,9 @@
 <template>
-	<nuxt-link :to="`/${$route.params.store}/categorias/${cart.metaTitle}`" target="_self" class="card">
+	<nuxt-link
+		:to="`/${$route.params.store}/categorias/${cart.metaTitle}`"
+		target="_self"
+		class="card"
+	>
 		<div class="dynamic-carousel__link-container">
 			<img
 				:src="

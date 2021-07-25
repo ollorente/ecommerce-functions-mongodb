@@ -8,14 +8,18 @@ module.exports = async (req, res, next) => {
   })
 
   if (!categoryData)
-    return res.status(404).json({
+    return res.status(400).json({
       error: true,
       mesage: 'Category not exists.',
     })
 
   let result
   try {
-    result = await CategoryModel.deleteOne({ _id: categoryData._id })
+    result = await CategoryModel.findOneAndUpdate(
+      { _id: categoryData._id },
+      { $set: { isDelete: true } },
+      { new: true }
+    )
 
     res.status(200).json({
       error: false,

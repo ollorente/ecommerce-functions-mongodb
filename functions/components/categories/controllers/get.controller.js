@@ -1,5 +1,5 @@
+const CategoryDTO = require('../dto')
 const CategoryModel = require('../model')
-const Interface = require('../dto')
 
 module.exports = async (req, res, next) => {
   const { category } = req.params
@@ -8,11 +8,12 @@ module.exports = async (req, res, next) => {
   try {
     result = await CategoryModel.findOne({
       metaTitle: category,
+      isDelete: false,
     })
 
     res.status(200).json({
       error: false,
-      data: result ? Interface.Interface(result) : null,
+      data: result ? CategoryDTO.Interface(result) : null,
     })
   } catch (error) {
     next(error)

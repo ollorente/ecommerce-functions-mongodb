@@ -4,9 +4,11 @@
     <HeaderMenu />
     <HeaderInfo />
     <div class="container">
-      <main>
-        <Nuxt />
-      </main>
+      <transition name="fade">
+        <main>
+          <Nuxt />
+        </main>
+      </transition>
     </div>
     <TheFooter />
   </div>

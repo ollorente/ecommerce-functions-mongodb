@@ -6,6 +6,7 @@ const logger = require('morgan')
 const multer = require('multer')
 const serverless = require('serverless-http')
 const mongoose = require('mongoose')
+const { error404, errorHandler } = require('./middleware')
 
 const app = express()
 
@@ -44,5 +45,8 @@ app.use(
 )
 
 app.use('/.netlify/functions/app', require('./routes'))
+
+app.use(error404)
+app.use(errorHandler)
 
 module.exports.handler = serverless(app)

@@ -1,5 +1,5 @@
 module.exports = {
-  CategoryGet: require("./get.controller"),
-  CategoryList: require("./list.controller"),
-  CategoryProductsList: require("./products.controller"),
+  Get: require("./get.controller"),
+  List: require("./list.controller"),
+  ProductsList: require("./products.controller"),
 }

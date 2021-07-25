@@ -52,6 +52,10 @@ const dbSchema = new Schema(
       type: Boolean,
       default: true,
     },
+    isDelete: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,

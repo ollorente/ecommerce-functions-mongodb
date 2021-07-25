@@ -2,7 +2,9 @@
   <div>
     <HeaderMain />
     <HeaderMenu />
-    <Nuxt />
+    <transition name="fade">
+      <Nuxt />
+    </transition>
     <TheFooter />
   </div>
 </template>

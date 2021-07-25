@@ -82,6 +82,15 @@ img {
   margin: 0 auto;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 /* -----X----- BASE -----X----- */
 
 /* ----------- STYLE ----------- */
@@ -197,6 +206,10 @@ main {
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
+  }
+
+  .avatar-store {
+    border: solid 4px var(--white);
   }
 }
 

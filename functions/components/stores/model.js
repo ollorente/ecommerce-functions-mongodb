@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose')
 const dbSchema = new Schema(
 	{
 		userId: {
-			type: ObjectId,
+			type: Schema.ObjectId,
 			ref: 'User',
 		},
 		name: {
@@ -20,6 +20,20 @@ const dbSchema = new Schema(
 			index: true,
 		},
 		ssl: String,
+		location: {
+			type: String,
+			default: '',
+		},
+		geo: {
+			type: {
+				type: String,
+				default: 'Point',
+			},
+			coordinates: {
+				type: [Number],
+				index: '2dsphere',
+			},
+		},
 		image: {
 			type: String,
 			default: '',
@@ -28,7 +42,25 @@ const dbSchema = new Schema(
 			type: String,
 			default: '',
 		},
+		logo: {
+			type: String,
+			default: '',
+		},
+		logoId: {
+			type: String,
+			default: '',
+		},
+		schedules: [
+			{
+				type: Schema.ObjectId,
+				ref: 'Schedule',
+			},
+		],
 		views: {
+			type: Number,
+			default: 0,
+		},
+		countReviews: {
 			type: Number,
 			default: 0,
 		},
@@ -37,6 +69,10 @@ const dbSchema = new Schema(
 			default: true,
 		},
 		isLock: {
+			type: Boolean,
+			default: false,
+		},
+		isDelete: {
 			type: Boolean,
 			default: false,
 		},

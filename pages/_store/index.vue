@@ -1,11 +1,16 @@
 <template>
   <div>
-    <ImageFeature :image="image" />
+    <ImageFeature :store="store" />
     <div class="container">
       <main class="grid col-1 col-xs-2 col-sm-2 col-md-3 col-lg-4 col-xl-4">
-        <CardCategory v-for="category in categories" :key="category.id" :cart="category" />
+        <CardCategory
+          v-for="category in categories"
+          :key="category.id"
+          :cart="category"
+        />
       </main>
     </div>
+    <pre class="container" hidden>{{ $data }}</pre>
   </div>
 </template>
 
@@ -22,20 +27,35 @@ export default {
   data() {
     return {
       categories: [],
-      image: {
-        url: 'https://res.cloudinary.com/dbszizqh4/image/upload/v1562285930/centro-comercial-oulet-bima/tljmkjhkpxcgjr9olmuu.png',
-        alt: 'Centro Comercial Oulet Bima',
-        class: '',
-      },
+      store: '',
+      limit: 20,
+      page: 1,
     }
   },
   created() {
     this.getCategories()
+    this.getStores()
   },
   methods: {
+    async getStores() {
+      await this.$axios
+        .get(`/stores/${this.$route.params.store}`, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+        .then(async (response) => {
+          if (response.data.data === null || response.data.error) {
+            await this.$router.replace('/')
+          }
+
+          this.store = await response.data.data
+        })
+        .catch((error) => console.log(error))
+    },
     async getCategories() {
       await this.$axios
-        .get(`/categories?limit=20`, {
+        .get(`/categories?limit=${this.limit}&page=${this.page}`, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -44,12 +64,12 @@ export default {
           this.categories = await response.data.data
         })
     },
-  }
+  },
 }
 </script>
 
 <style scoped>
 main {
-	min-height: calc(100vh - 52.8rem) !important;
+  min-height: calc(100vh - 52.8rem) !important;
 }
 </style>

@@ -1,5 +1,5 @@
+const ProductDTO = require("../dto")
 const ProductModel = require("../model")
-const Interface = require("../dto")
 const paginator = require("../../../utils/paginator")
 
 module.exports = async (req, res, next) => {
@@ -8,7 +8,8 @@ module.exports = async (req, res, next) => {
   let result, count
   try {
     result = await ProductModel.find({
-        isActive: true
+        isActive: true,
+        isDelete: false,
       })
       .limit(P.limit)
       .skip(P.page)
@@ -17,12 +18,13 @@ module.exports = async (req, res, next) => {
       })
 
     count = await ProductModel.countDocuments({
-      isActive: true
+      isActive: true,
+      isDelete: false,
     })
 
     res.status(200).json({
       error: false,
-      data: result.length > 0 ? result.map(e => Interface.RefInterface(e)) : [],
+      data: result.length > 0 ? result.map(e => ProductDTO.RefInterface(e)) : [],
       count
     })
   } catch (error) {

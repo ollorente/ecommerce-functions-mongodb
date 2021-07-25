@@ -1,22 +1,16 @@
 const router = require('express').Router()
 
-const {
-  AdminCategoryCreate,
-  AdminCategoryGet,
-  AdminCategoryList,
-  AdminCategoryRemove,
-  AdminCategoryUpdate,
-} = require('./adminControllers')
+const { Create, Get, List, Remove, Update } = require('./adminControllers')
 
 router
 	.route('/')
-	.post(AdminCategoryCreate)
-	.get(AdminCategoryList)
+	.post(Create)
+	.get(List)
 
 router
   .route('/:category')
-  .get(AdminCategoryGet)
-  .put(AdminCategoryUpdate)
-  .delete(AdminCategoryRemove)
+  .get(Get)
+  .put(Update)
+  .delete(Remove)
 
 module.exports = router

@@ -1,42 +1,47 @@
-const CategoryModel = require("../model")
-const ProductModel = require("../../products/model")
-const Interface = require("../dto")
-const paginator = require("../../../utils/paginator")
+const CategoryDTO = require('../dto')
+const CategoryModel = require('../model')
+const { ProductModel } = require('../../products')
+const { StoreModel } = require('../../stores')
+const paginator = require('../../../utils/paginator')
 
 module.exports = async (req, res, next) => {
-  const {
-    category
-  } = req.params
+  const { category } = req.params
   const P = paginator(req.query.limit, req.query.page)
 
   const categoryData = await CategoryModel.findOne({
-    _id: category
+    metaTitle: category,
   })
 
-  if (!categoryData) return res.status(400).json({
-    error: true,
-    message: 'Category not found'
-  })
+  if (!categoryData)
+    return res.status(400).json({
+      error: true,
+      message: 'Category not found',
+    })
 
   let result, count
   try {
     result = await ProductModel.find({
-        isActive: true
-      })
+      categoryId: categoryData._id,
+      isActive: true,
+      isDelete: false,
+    })
       .limit(P.limit)
       .skip(P.page)
       .sort({
-        sortOrder: 1
+        sortOrder: 1,
       })
 
     count = await ProductModel.countDocuments({
-      isActive: true
+      categoryId: categoryData._id,
+      isActive: true,
+      isDelete: false,
     })
 
     res.status(200).json({
       error: false,
-      data: result.length > 0 ? result.map(e => Interface.RefInterface(e)) : [],
-      count
+      data:
+        result.length > 0 ? result.map((e) => CategoryDTO.RefInterface(e)) : [],
+      count,
     })
   } catch (error) {
     next(error)

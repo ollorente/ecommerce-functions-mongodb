@@ -1,11 +1,9 @@
 <template>
   <div>
     <HeaderMain />
-    <div class="container">
-      <main>
-        <Nuxt />
-      </main>
-    </div>
+    <transition name="fade">
+      <Nuxt />
+    </transition>
     <TheFooter />
   </div>
 </template>
@@ -25,8 +23,4 @@ export default {
 }
 </script>
 
-<style scoped>
-main {
-  min-height: calc(100vh - 20rem) !important;
-}
-</style>
+<style scoped></style>

@@ -34,7 +34,7 @@ module.exports = async (req, res, next) => {
       message: 'Email already exist!'
     })
   }
-console.log('emailExist->', emailExist)
+  console.log('emailExist->', emailExist)
   /* Hash password */
   const salt = await bcrypt.genSalt(10)
   const hashedPassword = await bcrypt.hash(password, salt)
@@ -49,7 +49,7 @@ console.log('emailExist->', emailExist)
     isNewsletter,
     provider: 'local'
   })
-console.log('newData->', newData)
+  console.log('newData->', newData)
   let result
   try {
     result = await newData.save()

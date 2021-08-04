@@ -16,6 +16,13 @@ module.exports = async (req, res, next) => {
     isNewsletter
   } = req.body
 
+  if (password !== password_confirmation) {
+    return res.status(400).json({
+      error: true,
+      message: 'Password don\'t match!.'
+    })
+  }
+
   /* Validate data */
   const { error } = registerValidation(req.body)
   if (error) {
@@ -44,7 +51,7 @@ module.exports = async (req, res, next) => {
     username: username.trim(),
     email: email.toLowerCase().trim(),
     password: hashedPassword,
-    gravatar: await md5(req.body.email.toLowerCase().trim()),
+    gravatar: md5(req.body.email.toLowerCase().trim()),
     phone,
     isNewsletter,
     provider: 'local'

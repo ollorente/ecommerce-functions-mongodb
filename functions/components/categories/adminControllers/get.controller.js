@@ -8,12 +8,12 @@ module.exports = async (req, res, next) => {
   try {
     result = await CategoryModel.findOne({
       metaTitle: category,
-      isDelete: false,
+      isDelete: false
     })
 
     res.status(200).json({
       error: false,
-      data: result ? CategoryDTO.Interface(result) : null,
+      data: result ? CategoryDTO.Interface(result) : null
     })
   } catch (error) {
     next(error)

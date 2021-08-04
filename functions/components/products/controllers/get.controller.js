@@ -1,5 +1,5 @@
-const ProductDTO = require("../dto")
-const ProductModel = require("../model")
+const ProductDTO = require('../dto')
+const ProductModel = require('../model')
 
 module.exports = async (req, res, next) => {
   const {
@@ -10,7 +10,7 @@ module.exports = async (req, res, next) => {
   try {
     result = await ProductModel.findOne({
       _id: product,
-      isDelete: false,
+      isDelete: false
     })
 
     res.status(200).json({

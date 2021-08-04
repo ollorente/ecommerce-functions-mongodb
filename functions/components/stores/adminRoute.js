@@ -4,9 +4,9 @@ const { Create, Get, List, Remove, Update } = require('./adminControllers')
 const { ReviewAdminControllers } = require('../reviews')
 
 router
-	.route('/')
-	.post(Create)
-	.get(List)
+  .route('/')
+  .post(Create)
+  .get(List)
 
 router
   .route('/:store')

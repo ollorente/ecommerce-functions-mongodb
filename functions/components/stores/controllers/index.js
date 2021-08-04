@@ -3,5 +3,5 @@ module.exports = {
   Get: require('./get.controller'),
   List: require('./list.controller'),
   Remove: require('./remove.controller'),
-  Update: require('./update.controller'),
+  Update: require('./update.controller')
 }

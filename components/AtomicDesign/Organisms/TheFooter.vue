@@ -3,8 +3,8 @@
 		<div class="container grid col-4">
 			<ul class="nav__navbar">
 				<li class="nav__item">
-					<nuxt-link to="#" class="nav__link"
-						><i class="fas fa-shopping-basket"></i> Link 1</nuxt-link
+					<nuxt-link to="/cuenta/login" class="nav__link"
+						><i class="fas fa-shopping-basket"></i> Mi cuenta</nuxt-link
 					>
 				</li>
 				<li class="nav__item">

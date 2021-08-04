@@ -1,7 +1,7 @@
 module.exports.Interface = db => {
-    return {}
+  return {}
 }
 
 module.exports.RefInterface = db => {
-    return {}
+  return {}
 }

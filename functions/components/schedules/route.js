@@ -1,14 +1,16 @@
 const router = require('express').Router()
 
-router
-	.route('/')
-	.post()
-	.get()
+const { Create, Get, List, Update, Remove } = require('./controllers')
 
 router
-	.route('/:schedule')
-	.get()
-	.put()
-	.delete()
+  .route('/')
+  .post(Create)
+  .get(List)
 
-modules.exports = router
+router
+  .route('/:schedule')
+  .get(Get)
+  .put(Update)
+  .delete(Remove)
+
+module.exports = router

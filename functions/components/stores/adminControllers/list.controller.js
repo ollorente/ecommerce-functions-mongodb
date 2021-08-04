@@ -1,6 +1,6 @@
-const StoreDTO = require("../dto")
-const StoreModel = require("../model")
-const paginator = require("../../../utils/paginator")
+const StoreDTO = require('../dto')
+const StoreModel = require('../model')
+const paginator = require('../../../utils/paginator')
 
 module.exports = async (req, res, next) => {
   const P = paginator(req.query.limit, req.query.page)
@@ -8,8 +8,8 @@ module.exports = async (req, res, next) => {
   let result, count
   try {
     result = await StoreModel.find({
-        isActive: true,
-      })
+      isActive: true
+    })
       .limit(P.limit)
       .skip(P.page)
       .sort({
@@ -17,7 +17,7 @@ module.exports = async (req, res, next) => {
       })
 
     count = await StoreModel.countDocuments({
-      isActive: true,
+      isActive: true
     })
 
     res.status(200).json({

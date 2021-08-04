@@ -15,16 +15,16 @@ mongoose
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true,
-    useFindAndModify: false,
+    useFindAndModify: false
   })
-  .then(() => console.log(`>>> [DB] is connected... <<<`))
+  .then(() => console.log('>>> [DB] is connected... <<<'))
   .catch((error) => console.log(`<<< [ERROR]: ${error} >>>`))
 
 app.use(logger('dev'))
 app.use(express.json())
 app.use(
   express.urlencoded({
-    extended: false,
+    extended: false
   })
 )
 app.use(cookieParser())
@@ -39,8 +39,8 @@ app.use(
     },
     dest: path.join(__dirname, '/public/temp'),
     limits: {
-      fileSize: 1024 * 1024 * 2,
-    },
+      fileSize: 1024 * 1024 * 2
+    }
   }).single('image')
 )
 

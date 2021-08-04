@@ -1,13 +1,13 @@
-const router = require("express").Router()
+const router = require('express').Router()
 
-const { Get, List } = require("./controllers")
-
-router
-    .route("/")
-    .get(List)
+const { Get, List } = require('./controllers')
 
 router
-    .route("/:product")
-    .get(Get)
+  .route('/')
+  .get(List)
+
+router
+  .route('/:product')
+  .get(Get)
 
 module.exports = router

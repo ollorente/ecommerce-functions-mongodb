@@ -3,6 +3,6 @@ module.exports = (l, p) => {
   const page = p ? Number(p - 1) * l : 0
   return {
     limit,
-    page,
+    page
   }
 }

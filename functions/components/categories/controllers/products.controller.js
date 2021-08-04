@@ -9,39 +9,40 @@ module.exports = async (req, res, next) => {
   const P = paginator(req.query.limit, req.query.page)
 
   const categoryData = await CategoryModel.findOne({
-    metaTitle: category,
+    metaTitle: category
   })
 
-  if (!categoryData)
+  if (!categoryData) {
     return res.status(400).json({
       error: true,
-      message: 'Category not found',
+      message: 'Category not found'
     })
+  }
 
   let result, count
   try {
     result = await ProductModel.find({
       categoryId: categoryData._id,
       isActive: true,
-      isDelete: false,
+      isDelete: false
     })
       .limit(P.limit)
       .skip(P.page)
       .sort({
-        sortOrder: 1,
+        sortOrder: 1
       })
 
     count = await ProductModel.countDocuments({
       categoryId: categoryData._id,
       isActive: true,
-      isDelete: false,
+      isDelete: false
     })
 
     res.status(200).json({
       error: false,
       data:
         result.length > 0 ? result.map((e) => CategoryDTO.RefInterface(e)) : [],
-      count,
+      count
     })
   } catch (error) {
     next(error)

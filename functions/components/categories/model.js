@@ -4,62 +4,62 @@ const dbSchema = new Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: true
     },
     description: {
       type: String,
-      default: '',
+      default: ''
     },
     metaTitle: {
       type: String,
       required: true,
       trim: true,
-      lowercase: true,
+      lowercase: true
     },
     metaDescription: {
       type: String,
-      default: '',
+      default: ''
     },
     metaKeyword: {
       type: String,
-      default: '',
+      default: ''
     },
     image: {
       type: String,
-      default: '',
+      default: ''
     },
     publicId: {
       type: String,
-      default: '',
+      default: ''
     },
     parentId: {
       type: Schema.ObjectId,
-      ref: 'Category',
+      ref: 'Category'
     },
     isTop: {
       type: Boolean,
-      default: false,
+      default: false
     },
     column: {
       type: Number,
-      default: 0,
+      default: 0
     },
     sortOrder: {
       type: Number,
-      default: 0,
+      default: 0
     },
     isActive: {
       type: Boolean,
-      default: true,
+      default: true
     },
     isDelete: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   {
     timestamps: true,
-    versionKey: false,
+    versionKey: false
   }
 )
 

@@ -4,14 +4,15 @@ module.exports = async (req, res, next) => {
   const { category } = req.params
 
   const categoryData = await CategoryModel.findOne({
-    metaTitle: category,
+    metaTitle: category
   })
 
-  if (!categoryData)
+  if (!categoryData) {
     return res.status(400).json({
       error: true,
-      mesage: 'Category not exists.',
+      mesage: 'Category not exists.'
     })
+  }
 
   let result
   try {
@@ -23,7 +24,7 @@ module.exports = async (req, res, next) => {
 
     res.status(200).json({
       error: false,
-      data: result,
+      data: result
     })
   } catch (error) {
     next(error)

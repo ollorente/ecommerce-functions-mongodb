@@ -3,13 +3,13 @@ const router = require('express').Router()
 const { Create, Get, Remove, Update } = require('./controllers')
 
 router
-	.route('/')
-	.post(Create)
+  .route('/')
+  .post(Create)
 
 router
-	.route('/:review')
-	.get(Get)
-	.put(Update)
-	.delete(Remove)
+  .route('/:review')
+  .get(Get)
+  .put(Update)
+  .delete(Remove)
 
 module.exports = router

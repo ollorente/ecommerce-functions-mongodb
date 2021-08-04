@@ -83,6 +83,11 @@ img {
   margin: 0 auto;
 }
 
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -157,6 +162,14 @@ main {
 
 .text-right {
   text-align: right !important;
+}
+
+.text-bold {
+  font-weight: bold !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
 }
 
 .bg-primary {

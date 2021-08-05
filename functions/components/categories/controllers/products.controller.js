@@ -1,7 +1,6 @@
 const CategoryDTO = require('../dto')
 const CategoryModel = require('../model')
 const { ProductModel } = require('../../products')
-const { StoreModel } = require('../../stores')
 const paginator = require('../../../utils/paginator')
 
 module.exports = async (req, res, next) => {

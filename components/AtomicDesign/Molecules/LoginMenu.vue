@@ -28,16 +28,16 @@ export default {
 					link: '/cuenta/login',
 					icon: null,
 				},
-				// {
-				// 	id: '3',
-				// 	title: 'Mis compras',
-				// 	link: '/cuenta/mis-compras',
-				// 	icon: null,
-				// },
+				{
+					id: '3',
+					title: 'Mis compras',
+					link: '/cuenta/mis-compras',
+					icon: null,
+				},
 				{
 					id: '4',
 					title: '',
-					link: '/cuenta/carrito-de-compras',
+					link: '/cuenta/mis-compras',
 					icon: '<i class="fas fa-shopping-cart"></i>',
 				},
 			],

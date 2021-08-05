@@ -1,5 +1,4 @@
 const UserModel = require('../model')
-const { StoreModel } = require('../../stores')
 
 module.exports = async (req, res, next) => {
   const { user } = req.params

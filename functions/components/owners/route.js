@@ -5,13 +5,13 @@ const { Create, Get, List, Remove, Update } = require('./controllers')
 
 router
   .route('/')
-  .post(Create)
-  .get(List)
+  .post(verify, Create)
+  .get(verify, List)
 
 router
   .route('/:owner')
-  .get(Get)
-  .put(Update)
-  .delete(Remove)
+  .get(verify, Get)
+  .put(verify, Update)
+  .delete(verify, Remove)
 
 module.exports = router

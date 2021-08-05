@@ -6,7 +6,6 @@ module.exports.Interface = (db) => {
     url: String(db.url),
     ssl: String(db.ssl),
     location: String(db.location),
-    location: String(db.location),
     geo: Array(db.geo),
     image: String(db.image),
     logo: String(db.logo),

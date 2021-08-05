@@ -6,6 +6,8 @@ const UserDTO = require('../dto')
 const { loginValidation } = require('../../../utils/validation')
 
 module.exports = async (req, res, next) => {
+  const { email, password } = req.body
+
   let token
   try {
     /* Validate data */
@@ -18,10 +20,10 @@ module.exports = async (req, res, next) => {
     }
 
     /* Checking if the user is already in the database */
-    const user = await UserModel.findOne({
-      email: req.body.email
+    const userData = await UserModel.findOne({
+      email: email
     })
-    if (!user) {
+    if (!userData) {
       return res.status(400).json({
         error: true,
         message: 'Email or password in wrong!'
@@ -30,8 +32,8 @@ module.exports = async (req, res, next) => {
 
     /* Password in correct */
     const validPass = await bcrypt.compare(
-      req.body.password,
-      user.password
+      password,
+      userData.password
     )
     if (!validPass) {
       res.status(400).json({
@@ -42,7 +44,7 @@ module.exports = async (req, res, next) => {
 
     token = JWT.sign(
       {
-        _id: user._id
+        _id: userData._id
       },
       process.env.SECRET_KEY,
       {
@@ -55,7 +57,7 @@ module.exports = async (req, res, next) => {
       .json({
         error: false,
         jwt: token,
-        data: UserDTO.RefInterface(user)
+        data: UserDTO.RefInterface(userData)
       })
   } catch (error) {
     next(error)

@@ -18,8 +18,7 @@ module.exports = async (req, res, next) => {
 
     res.status(200).json({
       error: false,
-      data:
-				result.length > 0 ? result.map((e) => ScheduleDTO.RefInterface(e)) : [],
+      data: result.length > 0 ? result.map((e) => ScheduleDTO.RefInterface(e)) : [],
       count
     })
   } catch (error) {

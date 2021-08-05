@@ -50,8 +50,7 @@ module.exports = async (req, res, next) => {
       },
       {
         path: '_projects',
-        select:
-					'name _collaboratorsCount _meetingsCount _tasksCount isActive isLock',
+        select: 'name _collaboratorsCount _meetingsCount _tasksCount isActive isLock',
         options: {
           limit: 5,
           sort: {

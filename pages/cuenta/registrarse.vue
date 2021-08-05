@@ -79,6 +79,9 @@
                     v-model="form.email"
                     placeholder="Correo electrónico *"
                     class="form-control"
+                    :class="
+                      isDanger && msg.input === 'email' ? 'input-danger' : ''
+                    "
                   />
                   <span
                     v-if="isDanger"
@@ -117,6 +120,9 @@
                     v-model="form.password"
                     placeholder="********"
                     class="form-control"
+                    :class="
+                      isDanger && msg.input === 'password' ? 'input-danger' : ''
+                    "
                   />
                   <span
                     v-if="isDanger"
@@ -140,6 +146,9 @@
                     v-model="form.password_confirmation"
                     placeholder="********"
                     class="form-control"
+                    :class="
+                      isDanger && msg.input === 'password_confirmation' ? 'input-danger' : ''
+                    "
                   />
                   <span
                     v-if="isDanger && msg.input === 'password_confirmation'"
@@ -210,6 +219,9 @@
 import TitleH1 from '~/components/AtomicDesign/Atoms/TitleH1'
 import TitleH4 from '~/components/AtomicDesign/Atoms/TitleH4'
 
+const TOKEN = localStorage.getItem('token')
+const CURRENT_USER = sessionStorage.getItem('currentuser')
+
 export default {
   name: 'FormLogup',
   components: {
@@ -243,6 +255,11 @@ export default {
         name: 'Aside',
         class: 'title h5',
       },
+    }
+  },
+  created() {
+    if (CURRENT_USER) {
+      this.$router.replace('/administracion')
     }
   },
   methods: {

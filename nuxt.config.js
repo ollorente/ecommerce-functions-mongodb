@@ -4,7 +4,29 @@ export default {
    ** Generate routes
    */
   generate: {
-    routes: []
+    routes: [
+      '/',
+      '/administracion',
+      '/administracion/crear-tienda',
+      '/administracion/productos',
+      '/backoffice',
+      '/ayuda',
+      '/buscar',
+      '/cuenta',
+      '/cuenta/login',
+      '/cuenta/mis-compras',
+      '/cuenta/olvide-mi-contrasena',
+      '/cuenta/registrarse',
+      '/:store',
+      '/:store/buscar',
+      '/:store/carrito-de-compras',
+      '/:store/categoria',
+      '/:store/historial',
+      '/:store/informacion',
+      '/:store/ofertas',
+      '/:store/producto',
+      '/:store/moda'
+    ]
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -32,6 +54,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    // '~/plugins/auth.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

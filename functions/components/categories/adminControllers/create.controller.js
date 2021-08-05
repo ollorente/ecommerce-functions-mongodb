@@ -15,7 +15,8 @@ module.exports = async (req, res, next) => {
     isActive
   } = req.body
 
-  const metaTitleData = await CategoryModel.findOne({ metaTitle: sluglify(name) })
+  const MetaTitle = metaTitle || sluglify(name)
+  const metaTitleData = await CategoryModel.findOne({ metaTitle: MetaTitle })
 
   if (metaTitleData) {
     return res.status(400).json({

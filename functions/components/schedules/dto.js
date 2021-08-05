@@ -15,7 +15,7 @@ module.exports.Interface = (db) => {
 module.exports.RefInterface = (db) => {
   return {
     id: String(db._id),
-    storeId: Arrray(db.storeId),
+    storeId: Array(db.storeId),
     day: String(db.day),
     open: String(db.open),
     close: String(db.close)

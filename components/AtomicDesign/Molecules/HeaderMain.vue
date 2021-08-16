@@ -1,48 +1,59 @@
 <template>
-	<div class="header">
+	<nav class="navbar navbar-expand-sm navbar-light" style="background: #fded35">
 		<div class="container">
-			<div class="nav__top grid col-1 col-sm-4 col-md-5">
-				<span class="nav__top-mobile">
-					<i class="fas fa-bars nav__top-icon"></i>
-					<nuxt-link
-						to="/"
-						class="nav__top-left brand span-1 span-sm-1 span-md-1"
-						><img
-							src="https://res.cloudinary.com/dbszizqh4/image/upload/v1598678563/favicon-ciudadbusca.svg"
-							alt="logo"
-							style="margin: 0; padding: 0; height: 2rem"
-					/></nuxt-link>
-				</span>
-				<nuxt-link
-					to="/"
-					class="
-						nav__top-no-mobile nav__top-left
-						brand
-						span-1 span-sm-1 span-md-1
-					"
-					><img
-						src="https://res.cloudinary.com/dbszizqh4/image/upload/v1598678563/ciudadbusca.svg"
-						alt="logo"
-						style="margin: 0; padding: 0; height: 3rem"
-				/></nuxt-link>
-				<div class="nav__top-middle span-1 span-sm-2 span-md-2">
-					<form @submit.prevent="goToSearch" :keyup="goToSearch">
-						<i class="fas fa-search"></i>
-						<input type="search" v-model="q" placeholder="Buscar producto..." />
-					</form>
-				</div>
-				<div class="nav__top-right span-1 span-sm-2 span-md-2">
-					<ul class="nav__navbar">
-						<li class="nav__item" v-for="menu in login_menus" :key="menu.id">
-							<nuxt-link :to="`${menu.link}`" class="nav__link"
-								><i v-html="menu.icon"></i> {{ menu.title }}</nuxt-link
-							>
-						</li>
-					</ul>
-				</div>
+			<nuxt-link class="navbar-brand" to="/"
+				><img
+					src="https://res.cloudinary.com/dbszizqh4/image/upload/v1598678563/favicon-ciudadbusca.svg"
+					alt="Logo eCommerce"
+					class="img-logo-icon" /><img
+					src="https://res.cloudinary.com/dbszizqh4/image/upload/v1598678563/ciudadbusca.svg"
+					alt="Logo eCommerce"
+					class="img-logo"
+			/></nuxt-link>
+			<button
+				class="navbar-toggler me-n1"
+				type="button"
+				data-bs-toggle="collapse"
+				data-bs-target="#navbarHeader"
+				aria-controls="navbarHeader"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+				style="margin-right: -1rem"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarHeader">
+				<form
+					class="d-flex w-100 px-3"
+					@submit.prevent="goToSearch"
+					:keyup="goToSearch"
+				>
+					<div class="input-group">
+						<input
+							class="form-control border-0"
+							type="search"
+							v-model="q"
+							placeholder="Buscar producto..."
+							aria-label="Buscar producto..."
+						/>
+						<button class="btn bg-white border-0" type="submit">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+				</form>
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item" v-for="menu in login_menus" :key="menu.id">
+						<nuxt-link
+							class="nav-link active"
+							aria-current="page"
+							:to="`${menu.link}`"
+							><i :class="menu.icon"></i> {{ menu.title }}</nuxt-link
+						>
+					</li>
+				</ul>
 			</div>
 		</div>
-	</div>
+	</nav>
 </template>
 
 <script>
@@ -54,8 +65,8 @@ export default {
 				{
 					id: '4',
 					title: '',
-					link: '/cuenta/carrito-de-compras',
-					icon: '<i class="fas fa-shopping-cart"></i>',
+					link: '/cuenta/mis-compras',
+					icon: 'fas fa-shopping-cart',
 				},
 			],
 			q: null,
@@ -73,136 +84,16 @@ export default {
 </script>
 
 <style scoped>
-.header {
-	margin: 0;
-	padding: calc(var(--unit) / 2) 0;
-	background: var(--primary);
-	position: fixed;
-	height: 56px;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 110;
-}
-
-.nav__top {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0;
-}
-
-.nav__top-mobile {
-	display: block;
-}
-
-.nav__top-no-mobile {
+.img-logo-icon {
 	display: none;
 }
 
-.nav__top-left {
-	flex: 1;
-	padding: 0;
-	border: solid 0px var(--light);
-}
-
-.brand {
-	font-size: calc(var(--unit) * 1.5);
-	font-weight: 700;
-	color: var(--dark);
-	cursor: pointer;
-}
-
-.nav__top-middle {
-	flex: 4;
-	padding: 0;
-	border: 0;
-	text-align: center;
-}
-
-.nav__top-right {
-	flex: 1;
-	text-align: right;
-	padding: calc(var(--unit) / 2) 0;
-	border: solid 0px var(--light);
-}
-
-form {
-	width: 90%;
-	margin: calc(var(--unit) / 2) auto;
-	padding: calc(var(--unit) / 2);
-	background: var(--white);
-	border: solid 1px calc(var(--light) / 2);
-	border-radius: calc(var(--unit) / 4);
-	display: flex;
-	align-items: center;
-}
-
-form i {
-	margin-right: calc(var(--unit) / 2);
-}
-
-input {
-	width: 100%;
+.navbar-light .navbar-toggler {
+	color: rgba(0, 0, 0, 0.55);
 	border: 0;
 }
 
-input:focus {
+.navbar-light .navbar-toggler:focus {
 	border: 0;
-	outline: none;
-}
-
-.nav__navbar {
-	margin: 0;
-	padding: 0;
-}
-
-.nav__item {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	display: inline-block;
-}
-
-.nav__link {
-	width: 100%;
-	margin: 0;
-	padding: calc(var(--unit) / 2);
-	font-size: var(--unit);
-	color: var(--dark);
-	border: solid 1px transparent;
-	border-radius: calc(var(--unit) / 4);
-	cursor: pointer;
-}
-
-.nav__link:hover {
-	border: solid 1px var(--dark);
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-	.nav__top-mobile {
-		display: none;
-	}
-
-	.nav__top-no-mobile {
-		display: block;
-	}
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
 }
 </style>

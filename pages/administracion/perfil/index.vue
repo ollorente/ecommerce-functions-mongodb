@@ -4,20 +4,20 @@
 			<div class="span-xs-2 span-md-2 span-lg-3" style="padding: 1rem">
 				<h1>Profile</h1>
 				<p v-if="profile.id">id: {{ profile.id }}</p>
-    		<p v-if="profile.name">name: {{ profile.name }}</p>
-    		<p v-if="profile.username">username: {{ profile.username }}</p>
-    		<p v-if="profile.email">email: {{ profile.email }}</p>
-    		<p v-if="profile.phone">phone: {{ profile.phone }}</p>
-    		<p v-if="profile.photoURL">photoURL: {{ profile.photoURL }}</p>
-    		<p v-if="profile.gravatar">gravatar: {{ profile.gravatar }}</p>
-    		<p v-if="profile.isActive">isActive: {{ profile.isActive }}</p>
-    		<p v-if="profile.isLock">isLock: {{ profile.isLock }}</p>
-    		<p v-if="profile.createdAt">createdAt: {{ profile.createdAt }}</p>
-    		<p v-if="profile.updatedAt">updatedAt: {{ profile.updatedAt }}</p>
+				<p v-if="profile.name">name: {{ profile.name }}</p>
+				<p v-if="profile.username">username: {{ profile.username }}</p>
+				<p v-if="profile.email">email: {{ profile.email }}</p>
+				<p v-if="profile.phone">phone: {{ profile.phone }}</p>
+				<p v-if="profile.photoURL">photoURL: {{ profile.photoURL }}</p>
+				<p v-if="profile.gravatar">gravatar: {{ profile.gravatar }}</p>
+				<p v-if="profile.isActive">isActive: {{ profile.isActive }}</p>
+				<p v-if="profile.isLock">isLock: {{ profile.isLock }}</p>
+				<p v-if="profile.createdAt">createdAt: {{ profile.createdAt }}</p>
+				<p v-if="profile.updatedAt">updatedAt: {{ profile.updatedAt }}</p>
 				<p><nuxt-link to="/administracion/perfil/editar">Editar</nuxt-link></p>
 			</div>
 		</transition>
-		<pre class="container" hidden>{{ $data }}</pre>
+		<pre class="container" hiddens>{{ $data }}</pre>
 	</div>
 </template>
 
@@ -58,6 +58,7 @@ export default {
 						},
 					})
 					.then(async (response) => {
+						console.log(response.data)
 						this.profile = await response.data.data
 					})
 					.catch((error) => console.error(error))
@@ -67,8 +68,8 @@ export default {
 		},
 	},
 	watch: {
-		$route: 'getProfile'
-	}
+		$route: 'getProfile',
+	},
 }
 </script>
 

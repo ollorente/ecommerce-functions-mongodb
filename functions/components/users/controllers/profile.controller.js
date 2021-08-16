@@ -18,8 +18,8 @@ module.exports = async (req, res, next) => {
   let result
   try {
     result = await await UserModel.findOne({
-    _id: userAuth._id
-  })
+      _id: userAuth._id
+    })
 
     res.status(200).json({
       error: false,

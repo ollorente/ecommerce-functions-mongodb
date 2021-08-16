@@ -6,6 +6,7 @@ const {
   Create,
   Get,
   List,
+  Profile,
   Remove,
   Update
 } = require('./controllers')
@@ -18,6 +19,10 @@ router
 router
   .route('/auth')
   .post(Auth)
+
+router
+  .route('/profile')
+  .get(verify, Profile)
 
 router
   .route('/:user')

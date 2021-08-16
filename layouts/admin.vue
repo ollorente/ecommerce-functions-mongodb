@@ -2,7 +2,7 @@
   <div>
     <div class="container-fluid">
       <div class="grid col-1 col-xs-3 col-sm-4 col-md-5 col-lg-6" style="gap: 0">
-        <div style="background: #ff0">
+        <div style="background: var(--primary)">
           <ul style="width: 100%; margin: 0; padding: 0; list-style: none">
             <li style="width: 100%; margin: 0; padding: 0">
               <a
@@ -84,7 +84,7 @@
             </li>
             <li style="width: 100%; margin: 0; padding: 0">
               <a
-                href="/administracion/#"
+                href="/administracion/perfil"
                 class="text-dark"
                 style="
                   width: 100%;
@@ -92,13 +92,13 @@
                   padding: calc(var(--unit) / 2) var(--unit);
                   display: block;
                 "
-                ><i class="fas fa-basketball-ball"></i> Link 6</a
+                ><i class="fas fa-basketball-ball"></i> Tu perfil</a
               >
             </li>
           </ul>
         </div>
         <div class="span-xs-2 span-sm-3 span-md-4 span-lg-5">
-          <div style="background: #ff0; padding: calc(var(--unit) / 2) var(--unit); font-size: var(--unit); display: flex; justify-content: space-between; align-items: center;">
+          <div style="background: var(--primary); padding: calc(var(--unit) / 2) var(--unit); font-size: var(--unit); display: flex; justify-content: space-between; align-items: center;">
             <form>
               <i class="fas fa-search"></i>
               <input type="search" placeholder="Buscar producto..." />

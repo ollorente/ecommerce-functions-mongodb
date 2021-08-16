@@ -6,6 +6,7 @@ const UserDTO = require('../dto')
 
 module.exports = async (req, res, next) => {
   const { user } = req.params
+  const update = req.body
 
   const userAuth = await UserModel.findOne({
     _id: req.user._id,
@@ -34,19 +35,19 @@ module.exports = async (req, res, next) => {
   let result
   try {
     if (userAuth._id.toString() === personData._id.toString()) {
-      if (req.body.password) {
+      if (update.password) {
         /* Hash password */
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(
-          req.body.password,
+          update.password,
           salt
         )
 
-        req.body.password = hashedPassword
+        update.password = hashedPassword
       }
 
-      if (req.body.email) {
-        req.body.gravatar = await md5(req.body.email)
+      if (update.email) {
+        update.gravatar = await md5(update.email)
       }
 
       result = await UserModel.findOneAndUpdate(
@@ -54,7 +55,7 @@ module.exports = async (req, res, next) => {
           _id: user
         },
         {
-          $set: req.body
+          $set: update
         },
         {
           new: true

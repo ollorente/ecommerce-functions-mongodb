@@ -1,117 +1,94 @@
 <template>
-	<footer>
-		<div class="container grid col-4">
-			<ul class="nav__navbar">
-				<li class="nav__item">
-					<nuxt-link to="/cuenta/login" class="nav__link"
-						><i class="fas fa-shopping-basket"></i> Mi cuenta</nuxt-link
-					>
-				</li>
-				<li class="nav__item">
-					<nuxt-link to="#" class="nav__link"
-						><i class="fas fa-shopping-basket"></i> Link 2</nuxt-link
-					>
-				</li>
-				<li class="nav__item">
-					<nuxt-link to="#" class="nav__link"
-						><i class="fas fa-shopping-basket"></i> Link 3</nuxt-link
-					>
-				</li>
-			</ul>
-			<ul class="nav__navbar">
-				<li class="nav__item">
-					<nuxt-link to="#" class="nav__link"
-						><i class="fas fa-shopping-basket"></i> Link 1</nuxt-link
-					>
-				</li>
-				<li class="nav__item">
-					<nuxt-link to="#" class="nav__link"
-						><i class="fas fa-shopping-basket"></i> Link 2</nuxt-link
-					>
-				</li>
-				<li class="nav__item">
-					<nuxt-link to="#" class="nav__link"
-						><i class="fas fa-shopping-basket"></i> Link 3</nuxt-link
-					>
-				</li>
-			</ul>
-			<ul class="nav__navbar">
-				<li class="nav__item">
-					<nuxt-link to="#" class="nav__link"
-						><i class="fas fa-shopping-basket"></i> Link 1</nuxt-link
-					>
-				</li>
-				<li class="nav__item">
-					<nuxt-link to="#" class="nav__link"
-						><i class="fas fa-shopping-basket"></i> Link 2</nuxt-link
-					>
-				</li>
-				<li class="nav__item">
-					<nuxt-link to="#" class="nav__link"
-						><i class="fas fa-shopping-basket"></i> Link 3</nuxt-link
-					>
-				</li>
-			</ul>
-			<ul class="nav__navbar">
-				<li class="nav__item">
-					<nuxt-link to="#" class="nav__link"
-						><i class="fas fa-shopping-basket"></i> Link 1</nuxt-link
-					>
-				</li>
-				<li class="nav__item">
-					<nuxt-link to="#" class="nav__link"
-						><i class="fas fa-shopping-basket"></i> Link 2</nuxt-link
-					>
-				</li>
-				<li class="nav__item">
-					<nuxt-link to="#" class="nav__link"
-						><i class="fas fa-shopping-basket"></i> Link 3</nuxt-link
-					>
-				</li>
-			</ul>
+	<footer class="mt-3 py-3 border-top bg-dark">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-sm-6 col-md-3">
+					<ListGroupFlush :menus="menus.one" />
+				</div>
+				<div class="col-12 col-sm-6 col-md-3">
+					<ListGroupFlush :menus="menus.two" />
+				</div>
+				<div class="col-12 col-sm-6 col-md-3">
+					<ListGroupFlush :menus="menus.three" />
+				</div>
+				<div class="col-12 col-sm-6 col-md-3">
+					<ListGroupFlush :menus="menus.four" />
+				</div>
+			</div>
 		</div>
 	</footer>
 </template>
 
 <script>
+import ListGroupFlush from '~/components/AtomicDesign/Molecules/ListGroupFlush'
+
 export default {
 	name: 'TheFooter',
+	components: {
+		ListGroupFlush,
+	},
+	data() {
+		return {
+			menus: {
+				one: [],
+				two: [],
+				three: [],
+				four: [],
+			},
+		}
+	},
+	created() {
+		this.getOne()
+		this.getTwo()
+		this.getThree()
+		this.getFour()
+	},
+	methods: {
+		async getOne() {
+			this.menus.one = [
+				{
+					icon: 'fas fa-shopping-basket',
+					link: '/cuenta/login',
+					title: 'Mi cuenta',
+				},
+			]
+		},
+		async getTwo() {
+			this.menus.two = [
+				{
+					icon: 'fas fa-shopping-basket',
+					link: '/',
+					title: 'Link del dos',
+				},
+			]
+		},
+		async getThree() {
+			this.menus.three = [
+				{
+					icon: 'fas fa-shopping-basket',
+					link: '/',
+					title: 'Link del tres',
+				},
+			]
+		},
+		async getFour() {
+			this.menus.four = [
+				{
+					icon: 'fas fa-shopping-basket',
+					link: '/',
+					title: 'Link del cuatro',
+				},
+			]
+		},
+	},
+	watch: {
+		$routes: ['getOne', 'getTwo', 'getThree', 'getFour'],
+	},
 }
 </script>
 
 <style scoped>
-footer {
-	margin-top: calc(var(--unit) * 4);
-	padding: calc(var(--unit) * 2) 0;
-	background: var(--dark);
-	color: var(--light);
-	border-top: solid var(--unit) var(--primary);
-}
-
-.nav__navbar {
-	margin: 0;
-	padding: 0;
-}
-
-.nav__item {
-	margin: 0;
-	padding: var(--unit) 0;
-	list-style: none;
-	display: block;
-}
-
-.nav__link {
-	width: 100%;
-	margin: 0;
-	padding: var(--unit) 0;
-	font-size: 1rem;
-	color: var(--light);
-	border: solid 1px transparent;
-	border-radius: calc(var(--unit) / 2);
-	cursor: pointer;
-}
-
-.nav__link:hover {
-	color: var(--primary);
+.border-top {
+	border-top: solid 16px #fded35 !important;
 }
 </style>

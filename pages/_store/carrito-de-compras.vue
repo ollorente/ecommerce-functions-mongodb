@@ -9,6 +9,19 @@
 import TitleH1 from '~/components/AtomicDesign/Atoms/TitleH1'
 
 export default {
+	head: {
+		htmlAttrs: {
+			lang: 'es',
+		},
+		title: 'Carrito de compras © CiudadBusca.co',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'Carrito de compras',
+			},
+		],
+	},
 	layout: 'main',
 	components: {
 		TitleH1,

@@ -25,6 +25,19 @@
 
 <script>
 export default {
+	head: {
+		htmlAttrs: {
+			lang: 'es',
+		},
+		title: 'Crear tienda © CiudadBusca.co',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'Crear tienda',
+			},
+		],
+	},
 	layout: 'admin',
 	components: {},
 	data() {

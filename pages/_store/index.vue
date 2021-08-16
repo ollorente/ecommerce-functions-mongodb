@@ -19,6 +19,19 @@ import CardCategory from '~/components/AtomicDesign/Molecules/CardCategory'
 import ImageFeature from '~/components/AtomicDesign/Atoms/ImageFeature'
 
 export default {
+  head: {
+    htmlAttrs: {
+      lang: 'es',
+    },
+    title: 'Tienda © CiudadBusca.co',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Tienda',
+      },
+    ],
+  },
   layout: 'store',
   components: {
     CardCategory,

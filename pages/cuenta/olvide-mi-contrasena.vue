@@ -47,6 +47,19 @@
 import TitleH1 from '~/components/AtomicDesign/Atoms/TitleH1'
 
 export default {
+  head: {
+    htmlAttrs: {
+      lang: 'es',
+    },
+    title: 'Olvidé mi contraseña © CiudadBusca.co',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Olvidé mi contraseña',
+      },
+    ],
+  },
   components: {
     TitleH1,
   },

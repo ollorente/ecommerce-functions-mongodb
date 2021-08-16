@@ -164,6 +164,19 @@ import Cart from '~/components/AtomicDesign/Molecules/Cart'
 import TitleH1 from '~/components/AtomicDesign/Atoms/TitleH1'
 
 export default {
+  head: {
+    htmlAttrs: {
+      lang: 'es',
+    },
+    title: 'Categoría © CiudadBusca.co',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Categoría',
+      },
+    ],
+  },
   layout: 'main',
 	components: {
     Aside,

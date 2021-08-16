@@ -12,6 +12,19 @@
 import TitleH1 from '~/components/AtomicDesign/Atoms/TitleH1'
 
 export default {
+	head: {
+		htmlAttrs: {
+			lang: 'es',
+		},
+		title: 'Información © CiudadBusca.co',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'Información',
+			},
+		],
+	},
 	layout: 'main',
 	components: {
 		TitleH1,

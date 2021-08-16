@@ -25,6 +25,19 @@
 
 <script>
 export default {
+	head: {
+		htmlAttrs: {
+			lang: 'es',
+		},
+		title: 'Productos © CiudadBusca.co',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'Productos',
+			},
+		],
+	},
 	layout: 'admin',
 	components: {},
 	data() {

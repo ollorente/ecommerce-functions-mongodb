@@ -22,13 +22,33 @@
 </template>
 
 <script>
+// const TOKEN = localStorage.getItem('token')
+// const CURRENT_USER = sessionStorage.getItem('currentuser')
+
 export default {
+	head: {
+		htmlAttrs: {
+			lang: 'es',
+		},
+		title: 'Administración © CiudadBusca.co',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'Administración',
+			},
+		],
+	},
 	layout: 'admin',
 	components: {},
 	data() {
 		return {}
 	},
-	created() {},
+	created() {
+		// if (!CURRENT_USER) {
+		// 	this.$router.replace('/cuenta/login')
+		// }
+	},
 	methods: {},
 }
 </script>

@@ -83,6 +83,19 @@ const SESSIONSTORAGE_NAME = 'currentuser'
 const TOKEN = 'accesstoken' 
 
 export default {
+  head: {
+    htmlAttrs: {
+      lang: 'es',
+    },
+    title: 'Login © CiudadBusca.co',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Login',
+      },
+    ],
+  },
   components: {
     TitleH2
   },

@@ -8,7 +8,20 @@
 
 <script>
 	export default {
-		layout: "backoffice",
+		head: {
+		htmlAttrs: {
+			lang: 'es',
+		},
+		title: 'Dashboard © CiudadBusca.co',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'Dashboard',
+			},
+		],
+	},
+	layout: "backoffice",
 		components: {},
 		data() {
 			return {}

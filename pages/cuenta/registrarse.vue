@@ -223,6 +223,19 @@ const TOKEN = localStorage.getItem('token')
 const CURRENT_USER = sessionStorage.getItem('currentuser')
 
 export default {
+  head: {
+    htmlAttrs: {
+      lang: 'es',
+    },
+    title: 'Registrarse © CiudadBusca.co',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Registrarse',
+      },
+    ],
+  },
   name: 'FormLogup',
   components: {
     // FormLogup,

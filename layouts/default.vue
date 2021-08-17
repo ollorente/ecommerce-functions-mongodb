@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div class="bg-light">
     <HeaderMain />
     <transition name="fade">
-      <Nuxt />
+      <main>
+        <Nuxt />
+      </main>
     </transition>
     <TheFooter />
   </div>
@@ -23,4 +25,9 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+  main {
+    margin-top: 2rem;
+    min-height: calc(100vh - 13.3rem);
+  }
+</style>

@@ -11,10 +11,4 @@ export default {
 }
 </script>
 
-<style scoped>
-h4 {
-  margin: 0;
-  padding: 0;
-  font-size: 2rem;
-}
-</style>
+<style scoped></style>

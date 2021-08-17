@@ -11,10 +11,4 @@ export default {
 }
 </script>
 
-<style scoped>
-h3 {
-  margin: 0;
-  padding: 0;
-  font-size: 2.5rem;
-}
-</style>
+<style scoped></style>

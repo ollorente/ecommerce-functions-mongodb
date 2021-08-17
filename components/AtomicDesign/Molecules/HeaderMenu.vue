@@ -41,7 +41,7 @@ export default {
 				{
 					dropdown: false,
 					icon: 'fas fa-map-marker-alt',
-					link: '/',
+					link: `/${this.$route.params.store}`,
 					subLinks: [],
 					title: 'Ubicación',
 				},

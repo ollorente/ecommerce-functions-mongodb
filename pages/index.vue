@@ -1,17 +1,19 @@
 <template>
-	<div>
-		<div class="container">
-			<main class="grid col-1 col-xs-2 col-sm-2 col-md-3 col-lg-4 col-xl-4">
-				<CardStore v-for="store in stores" :key="store.id" :store="store" />
-				<div class="card" v-if="countStores === 0">
+	<div class="container">
+		<div class="row">
+			<CardStore v-for="store in stores" :key="store.id" :store="store" class="col-12 col-sm-6 col-md-4 col-lg-3" />
+			<div class="col-12 col-sm-6 col-md-4 col-lg-3" v-if="countStores === 0">
+				<div class="card border-0 shadow-sm mb-3">
 					<img
 						src="https://res.cloudinary.com/dbszizqh4/image/upload/v1562472720/default.jpg"
 						alt="No hay nada cerca"
+						class="img-card-store rounded-top"
 					/>
-					<div class="card-body">No hay nada cerca</div>
+					<div class="card-body p-2">No hay nada cerca</div>
 				</div>
-			</main>
+			</div>
 		</div>
+		<pre class="container" hidden>{{$data}}</pre>
 	</div>
 </template>
 
@@ -57,12 +59,13 @@ export default {
 				.then(async (response) => {
 					this.stores = await response.data.data
 					this.countStores = await response.data.count
+					console.log(this.stores)
 				})
 		},
 	},
 	watch: {
-		$route: ['getStores']
-	}
+		$route: ['getStores'],
+	},
 }
 </script>
 

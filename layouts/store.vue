@@ -25,4 +25,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+main {
+  min-height: calc(100vh - 15.8rem) !important;
+}
+</style>

@@ -1,177 +1,184 @@
 <template>
-  <div>
-    <div class="container">
-      <main class="grid col-1 col-sm-2">
-        <div class="col-sm-1">
-          <div class="well">
-            <TitleH2 :title2="title1" />
-            <p><strong>Registrar Cuenta</strong></p>
-            <p>
-              Al crear una cuenta, podrá comprar más rápido, estar actualizado
-              sobre el estado de un pedido y realizar un seguimiento de los
-              pedidos que haya realizado anteriormente.
-            </p>
-            <nuxt-link to="/cuenta/registrarse" class="btn btn-primary">Continuar</nuxt-link>
-          </div>
-        </div>
-        <div class="col-sm-1">
-          <div class="well">
-            <TitleH2 :title2="title2" />
-            <p><strong>Yo soy cliente</strong></p>
-            <form @submit.prevent="login">
-              <div class="form-group">
-                <label class="control-label" for="input-email"
-                  >Dirección de correo electrónico</label
-                >
-                <input
-                  type="email"
-                  v-model="form.email"
-                  value=""
-                  placeholder="Dirección de correo electrónico"
-                  id="input-email"
-                  class="form-control"
-                    :class="
-                      isDanger && msg.input === 'email' ? 'input-danger' : ''
-                    "
-                />
-                  <div
-                    v-if="isDanger"
-                    :class="
-                      isDanger && msg.input === 'email' ? 'span-danger' : ''
-                    "
-                    >{{ msg.title }}</div
-                  >
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="input-password"
-                  >Contraseña</label
-                >
-                <input
-                  type="password"
-                  v-model="form.password"
-                  value=""
-                  placeholder="Contraseña"
-                  id="input-password"
-                  class="form-control"
-                    :class="
-                      isDanger && msg.input === 'password' ? 'input-danger' : ''
-                    "
-                />
-                  <div
-                    v-if="isDanger"
-                    :class="
-                      isDanger && msg.input === 'password' ? 'span-danger' : ''
-                    "
-                    >{{ msg.title }}</div
-                  >
-                <nuxt-link to="/cuenta/olvide-mi-contrasena">Contraseña olvidada</nuxt-link>
-              </div>
-              <input type="submit" value="Login" class="btn btn-primary" />
-              <input type="hidden" name="redirect" value="/cuenta/account" />
-            </form>
-          </div>
-        </div>
-      </main>
-    </div>
-  </div>
+	<div>
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-sm-6">
+					<div class="mb-3">
+						<TitleH2 :title2="title1" />
+						<p><strong>Registrar Cuenta</strong></p>
+						<p>
+							Al crear una cuenta, podrá comprar más rápido, estar actualizado
+							sobre el estado de un pedido y realizar un seguimiento de los
+							pedidos que haya realizado anteriormente.
+						</p>
+						<div class="d-grid gap-2 d-sm-block">
+						  <nuxt-link to="/cuenta/registrarse" class="btn btn-primary">Continuar</nuxt-link>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6">
+					<TitleH2 :title2="title2" />
+					<p><strong>Yo soy cliente</strong></p>
+					<form @submit.prevent="login" class="mb-3">
+						<div class="mb-3">
+							<label for="email" class="form-label"
+								>Dirección de correo electrónico</label
+							>
+							<input
+								type="email"
+								class="form-control"
+								:class="
+									isDanger && msg.input === 'email' ? 'border-danger' : ''
+								"
+								id="email"
+								v-model="form.email"
+								placeholder="Dirección de correo electrónico"
+							/>
+							<div
+								v-if="isDanger"
+								:class="isDanger && msg.input === 'email' ? 'text-danger' : ''"
+							>
+								{{ msg.title }}
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="password" class="form-label">Contraseña</label>
+							<input
+								type="password"
+								class="form-control"
+								:class="
+									isDanger && msg.input === 'password' ? 'border-danger' : ''
+								"
+								id="password"
+								v-model="form.password"
+								placeholder="********"
+							/>
+							<div
+								v-if="isDanger"
+								:class="
+									isDanger && msg.input === 'password' ? 'text-danger' : ''
+								"
+							>
+								{{ msg.title }}
+							</div>
+						</div>
+						<div class="mb-3">
+							<nuxt-link
+								to="/cuenta/olvide-mi-contrasena"
+								class="text-decoration-none"
+								>Contraseña olvidada</nuxt-link
+							>
+						</div>
+						<div class="d-grid gap-2 d-sm-block">
+							<button type="submit" class="btn btn-primary">Login</button>
+						</div>
+						<input type="hidden" name="redirect" value="/cuenta/account" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
 import TitleH2 from '~/components/AtomicDesign/Atoms/TitleH2'
 
 const SESSIONSTORAGE_NAME = 'currentuser'
-const TOKEN = 'accesstoken' 
+const TOKEN = 'accesstoken'
 
 export default {
-  head: {
-    htmlAttrs: {
-      lang: 'es',
-    },
-    title: 'Login © CiudadBusca.co',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Login',
-      },
-    ],
-  },
-  components: {
-    TitleH2
-  },
-  data() {
-    return {
-      form: {
-        email: null,
-        password: null,
-      },
-      msg: {
-        input: '',
-        title: '',
-      },
-      isDanger: false,
-      title1: {
-        name: 'Nuevo cliente',
-        class: 'title h5',
-      },
-      title2: {
-        name: 'Soy Cliente',
-        class: 'title h5',
-      },
-    }
-  },
-  methods: {
-    async login() {
-      try {
-        if (this.form.email === null) {
-          this.msg.input = 'email'
-          this.isDanger = true
-          this.msg.title = 'Los campos no pueden estar vacíos.'
-          return
-        }
+	head: {
+		htmlAttrs: {
+			lang: 'es',
+		},
+		title: 'Login © CiudadBusca.co',
+		meta: [
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'Login',
+			},
+		],
+	},
+	components: {
+		TitleH2,
+	},
+	data() {
+		return {
+			form: {
+				email: null,
+				password: null,
+			},
+			msg: {
+				input: '',
+				title: '',
+			},
+			isDanger: false,
+			title1: {
+				name: 'Nuevo Cliente',
+				class: 'title h4 text-uppercase',
+			},
+			title2: {
+				name: 'Soy Cliente',
+				class: 'title h4 text-uppercase',
+			},
+		}
+	},
+	methods: {
+		async login() {
+			try {
+				if (this.form.email === null) {
+					this.msg.input = 'email'
+					this.isDanger = true
+					this.msg.title = 'Los campos no pueden estar vacíos.'
+					return
+				}
 
-        if (this.form.password === null) {
-          this.msg.input = 'password'
-          this.isDanger = true
-          this.msg.title = 'Los campos no pueden estar vacíos.'
-          return
-        }
+				if (this.form.password === null) {
+					this.msg.input = 'password'
+					this.isDanger = true
+					this.msg.title = 'Los campos no pueden estar vacíos.'
+					return
+				}
 
-        await this.$axios
-          .post(`/users/auth`, JSON.stringify(this.form), {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          })
-          .then(async (response) => {
-            if (response.data.error) {
-              console.log(response.data.error)
-              return
-            }
-            
-            await localStorage.setItem(TOKEN, JSON.stringify(response.data.jwt))
-            await sessionStorage.setItem(SESSIONSTORAGE_NAME, JSON.stringify(response.data.data))
+				await this.$axios
+					.post(`/users/auth`, JSON.stringify(this.form), {
+						headers: {
+							'Content-Type': 'application/json',
+						},
+					})
+					.then(async (response) => {
+						if (response.data.error) {
+							console.log(response.data.error)
+							return
+						}
 
-            this.form.name = ''
-            this.form.email = ''
-            this.msg.input = ''
-            this.msg.title = ''
-            this.isPolicy = false
-            this.isDanger = false
+						await localStorage.setItem(TOKEN, JSON.stringify(response.data.jwt))
+						await sessionStorage.setItem(
+							SESSIONSTORAGE_NAME,
+							JSON.stringify(response.data.data)
+						)
 
-            await this.$router.replace('/administracion')
-          })
-          .catch((err) => console.log(err))
-      } catch (err) {
-        console.log(err)
-      }
-    },
-  },
+						this.form.name = ''
+						this.form.email = ''
+						this.msg.input = ''
+						this.msg.title = ''
+						this.isPolicy = false
+						this.isDanger = false
+
+						await this.$router.replace('/administracion')
+					})
+					.catch((err) => console.log(err))
+			} catch (err) {
+				console.log(err)
+			}
+		},
+	},
 }
 </script>
 
 <style scoped>
-main {
+/*main {
   margin-top: calc(var(--unit) * 6);
 }
 
@@ -208,5 +215,5 @@ input {
   color: var(--error);
   margin-bottom: 
   var(--unit);
-}
+}*/
 </style>

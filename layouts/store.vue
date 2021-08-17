@@ -1,9 +1,11 @@
 <template>
-  <div>
+  <div class="bg-light">
     <HeaderMain />
     <HeaderMenu />
     <transition name="fade">
-      <Nuxt />
+      <main>
+        <Nuxt />
+      </main>
     </transition>
     <TheFooter />
   </div>

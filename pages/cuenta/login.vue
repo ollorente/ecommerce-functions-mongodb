@@ -177,43 +177,4 @@ export default {
 }
 </script>
 
-<style scoped>
-/*main {
-  margin-top: calc(var(--unit) * 6);
-}
-
-fieldset {
-  border: solid 2px var(--white);
-  padding: var(--unit);
-  margin: var(--unit) 0;
-  border-radius: calc(var(--unit) / 4);
-}
-
-legend {
-  font-size: calc(var(--unit) * 1.5);
-  padding: 0 var(--unit);
-}
-
-label {
-  margin: var(--unit) 0;
-}
-
-input {
-  width: 100%;
-  margin: calc(var(--unit) / 2) 0;
-  padding: calc(var(--unit) / 2);
-  border: 0;
-  border-radius: calc(var(--unit) / 4);
-}
-
-.input-danger {
-  border: solid 1px var(--error);
-  color: var(--error);
-}
-
-.span-danger {
-  color: var(--error);
-  margin-bottom: 
-  var(--unit);
-}*/
-</style>
+<style scoped></style>

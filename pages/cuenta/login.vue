@@ -17,7 +17,7 @@
 					</div>
 				</div>
 				<div class="col-12 col-sm-6">
-					<TitleH2 :title2="title2" />
+					<TitleH1 :title1="title2" />
 					<p><strong>Yo soy cliente</strong></p>
 					<form @submit.prevent="login" class="mb-3">
 						<div class="mb-3">
@@ -33,6 +33,8 @@
 								id="email"
 								v-model="form.email"
 								placeholder="Dirección de correo electrónico"
+								autofocus
+								required
 							/>
 							<div
 								v-if="isDanger"
@@ -52,6 +54,7 @@
 								id="password"
 								v-model="form.password"
 								placeholder="********"
+								required
 							/>
 							<div
 								v-if="isDanger"
@@ -81,10 +84,11 @@
 </template>
 
 <script>
+import TitleH1 from '~/components/AtomicDesign/Atoms/TitleH1'
 import TitleH2 from '~/components/AtomicDesign/Atoms/TitleH2'
 
-const SESSIONSTORAGE_NAME = 'currentuser'
-const TOKEN = 'accesstoken'
+// const SESSIONSTORAGE_NAME = 'currentuser'
+// const TOKEN = 'accesstoken'
 
 export default {
 	head: {
@@ -101,6 +105,7 @@ export default {
 		],
 	},
 	components: {
+		TitleH1,
 		TitleH2,
 	},
 	data() {
@@ -153,11 +158,11 @@ export default {
 							return
 						}
 
-						await localStorage.setItem(TOKEN, JSON.stringify(response.data.jwt))
-						await sessionStorage.setItem(
-							SESSIONSTORAGE_NAME,
-							JSON.stringify(response.data.data)
-						)
+						// await localStorage.setItem(TOKEN, JSON.stringify(response.data.jwt))
+						// await sessionStorage.setItem(
+						// 	SESSIONSTORAGE_NAME,
+						// 	JSON.stringify(response.data.data)
+						// )
 
 						this.form.name = ''
 						this.form.email = ''

@@ -2,13 +2,14 @@
   <div>
     <ImageFeature :store="store" />
     <div class="container">
-      <main class="grid col-1 col-xs-2 col-sm-2 col-md-3 col-lg-4 col-xl-4">
+      <div class="row">
         <CardCategory
           v-for="category in categories"
           :key="category.id"
           :cart="category"
+          class="col-12 col-sm-6 col-md-4 col-lg-3"
         />
-      </main>
+      </div>
     </div>
     <pre class="container" hidden>{{ $data }}</pre>
   </div>
@@ -16,7 +17,7 @@
 
 <script>
 import CardCategory from '~/components/AtomicDesign/Molecules/CardCategory'
-import ImageFeature from '~/components/AtomicDesign/Atoms/ImageFeature'
+import ImageFeature from '~/components/AtomicDesign/Molecules/ImageFeature'
 
 export default {
   head: {

@@ -2,20 +2,20 @@
 	<nuxt-link
 		:to="`/${$route.params.store}/categorias/${cart.metaTitle}`"
 		target="_self"
-		class="card"
+		class="mb-3 text-decoration-none"
 	>
-		<div class="dynamic-carousel__link-container">
+		<div class="card border-0 shadow-sm">
 			<img
 				:src="
 					cart.image
 						? cart.image
 						: `https://res.cloudinary.com/dbszizqh4/image/upload/v1562472720/default.jpg`
 				"
-				class="dynamic-carousel__img"
+				class="img-category rounded-top"
 				:alt="cart.name"
 			/>
-			<div class="dynamic-carousel__item-content with-discount card-body">
-				<div class="text-center text-dark bold">{{ cart.name }}</div>
+			<div class="card-body">
+				<div class="text-center text-dark fw-bold text-uppercase">{{ cart.name }}</div>
 			</div>
 		</div>
 	</nuxt-link>
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-.card {
+/*.card {
 	background: white;
 	border-radius: calc(var(--unit) / 2);
 	box-shadow: 0 0 var(--unit) rgba($color: #000000, $alpha: 0.05);
@@ -55,5 +55,5 @@ export default {
 
 .bold {
 	text-transform: uppercase;
-}
+}*/
 </style>

@@ -1,7 +1,12 @@
 <template>
 	<div class="container">
 		<div class="row">
-			<CardStore v-for="store in stores" :key="store.id" :store="store" class="col-12 col-sm-6 col-md-4 col-lg-3" />
+			<CardStore
+				v-for="store in stores"
+				:key="store.id"
+				:store="store"
+				class="col-12 col-sm-6 col-md-4 col-lg-3"
+			/>
 			<div class="col-12 col-sm-6 col-md-4 col-lg-3" v-if="countStores === 0">
 				<div class="card border-0 shadow-sm mb-3">
 					<img
@@ -13,7 +18,7 @@
 				</div>
 			</div>
 		</div>
-		<pre class="container" hidden>{{$data}}</pre>
+		<pre class="container" hidden>{{ $data }}</pre>
 	</div>
 </template>
 
@@ -59,7 +64,6 @@ export default {
 				.then(async (response) => {
 					this.stores = await response.data.data
 					this.countStores = await response.data.count
-					console.log(this.stores)
 				})
 		},
 	},

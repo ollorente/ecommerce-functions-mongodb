@@ -1,18 +1,19 @@
 <template>
 	<div>
 		<nav
-			class="navbar sticky-top navbar-expand-sm navbar-light"
+			class="navbar sticky-top navbar-expand-md navbar-light"
 			style="background: #fded35"
 		>
 			<div class="container">
 				<button
-					class="navbar-toggler"
+					class="navbar-toggler ms-auto"
 					type="button"
 					data-bs-toggle="collapse"
 					data-bs-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent"
 					aria-expanded="false"
 					aria-label="Toggle navigation"
+					style=""
 				>
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -123,4 +124,14 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.navbar-light .navbar-toggler {
+	color: rgba(0, 0, 0, 0.55);
+	border: 0;
+	margin-right: -1rem;
+}
+
+.navbar-light .navbar-toggler:focus {
+	border: 0;
+}
+</style>

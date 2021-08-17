@@ -1,7 +1,10 @@
 <template>
-	<div>
-		<TitleH1 :title1="title1" />
-		<pre class"container">{{ $data }}</pre>
+	<div class="container mt-3">
+		<div class="row">
+			<div class="col-12">
+				<TitleH1 :title1="title1" />
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -22,7 +25,7 @@ export default {
 			},
 		],
 	},
-	layout: 'main',
+	layout: 'store',
 	components: {
 		TitleH1,
 	},
@@ -32,21 +35,16 @@ export default {
 				name: 'Carrito de compras',
 				class: 'title h3',
 			},
-			shopping: [
-				{
-					store: '123456789',
-					shopping: [],
-				},
-				{
-					store: '234567890',
-					shopping: [],
-				},
-				{
-					store: '345678901',
-					shopping: [],
-				},
-			]
 		}
+	},
+	created() {
+		this.getPurchases()
+	},
+	methods: {
+		async getPurchases() {},
+	},
+	watch: {
+		$route: ['getPurchases'],
 	},
 }
 </script>

@@ -1,9 +1,9 @@
 <template>
-	<div>
-		<div class="container">
-			<main>
+	<div class="container mt-3">
+		<div class="row">
+			<div class="col-12">
 				<TitleH1 :title1="title1" />
-			</main>
+			</div>
 		</div>
 	</div>
 </template>
@@ -16,26 +16,37 @@ export default {
 		htmlAttrs: {
 			lang: 'es',
 		},
-		title: 'Ofertas © CiudadBusca.co',
+		title: 'Ayuda / PQR © CiudadBusca.co',
 		meta: [
 			{
 				hid: 'description',
 				name: 'description',
-				content: 'Ofertas',
+				content: 'Ayuda / PQR',
 			},
 		],
 	},
-	layout: 'main',
+	layout: 'store',
 	components: {
 		TitleH1,
 	},
 	data() {
 		return {
 			title1: {
-				name: 'Ofertas',
+				name: 'Ayuda / PQR',
 				class: 'title h3',
 			},
 		}
 	},
+	created() {
+		this.getHelp()
+	},
+	methods: {
+		async getHelp() {},
+	},
+	watch: {
+		$route: ['getHelp'],
+	},
 }
 </script>
+
+<style scoped></style>

@@ -1,8 +1,40 @@
 <template>
-	<div class="grid col-1 col-xs-2 col-sm-1 col-md-3 col-lg-4">
+	<div>
 		<transition name="fade">
+			<div
+				class="
+					d-flex
+					justify-content-between
+					flex-wrap flex-md-nowrap
+					align-items-center
+					pt-3
+					pb-2
+					mb-3
+					border-bottom
+				"
+			>
+				<h1 class="h2">Edit Profile</h1>
+				<div class="btn-toolbar mb-2 mb-md-0">
+					<div class="btn-group me-2">
+						<button type="button" class="btn btn-sm btn-outline-secondary">
+							Share
+						</button>
+						<button type="button" class="btn btn-sm btn-outline-secondary">
+							Export
+						</button>
+					</div>
+					<button
+						type="button"
+						class="btn btn-sm btn-outline-secondary dropdown-toggle"
+					>
+						<span data-feather="calendar"></span>
+						This week
+					</button>
+				</div>
+			</div>
+
 			<div class="span-xs-2 span-md-2 span-lg-3" style="padding: 1rem">
-				<h1>Edit Profile</h1>
+				<h1>Profile</h1>
 				<p v-if="profile.id">id: {{ profile.id }}</p>
 				<p v-if="profile.name">name: {{ profile.name }}</p>
 				<p v-if="profile.username">username: {{ profile.username }}</p>
@@ -14,9 +46,12 @@
 				<p v-if="profile.isLock">isLock: {{ profile.isLock }}</p>
 				<p v-if="profile.createdAt">createdAt: {{ profile.createdAt }}</p>
 				<p v-if="profile.updatedAt">updatedAt: {{ profile.updatedAt }}</p>
-				<p><nuxt-link to="/administracion/perfil">Volver</nuxt-link></p>
+				<p>
+					<nuxt-link to="/administracion/perfil">Volver</nuxt-link>
+				</p>
 			</div>
 		</transition>
+		<pre class="container" hiddens>{{ $data }}</pre>
 	</div>
 </template>
 

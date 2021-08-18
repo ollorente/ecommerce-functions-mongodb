@@ -87,8 +87,8 @@
 import TitleH1 from '~/components/AtomicDesign/Atoms/TitleH1'
 import TitleH2 from '~/components/AtomicDesign/Atoms/TitleH2'
 
-// const SESSIONSTORAGE_NAME = 'currentuser'
-// const TOKEN = 'accesstoken'
+const SESSIONSTORAGE_NAME = 'currentuser'
+const TOKEN = 'accesstoken'
 
 export default {
 	head: {
@@ -158,11 +158,11 @@ export default {
 							return
 						}
 
-						// await localStorage.setItem(TOKEN, JSON.stringify(response.data.jwt))
-						// await sessionStorage.setItem(
-						// 	SESSIONSTORAGE_NAME,
-						// 	JSON.stringify(response.data.data)
-						// )
+						await localStorage.setItem(TOKEN, JSON.stringify(response.data.jwt))
+						await sessionStorage.setItem(
+							SESSIONSTORAGE_NAME,
+							JSON.stringify(response.data.data)
+						)
 
 						this.form.name = ''
 						this.form.email = ''

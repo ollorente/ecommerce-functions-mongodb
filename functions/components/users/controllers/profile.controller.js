@@ -14,7 +14,7 @@ module.exports = async (req, res, next) => {
       message: 'Access denied'
     })
   }
-
+console.log("userAuth->", userAuth)
   let result
   try {
     result = await await UserModel.findOne({

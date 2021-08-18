@@ -370,7 +370,7 @@
 				</div>
 				<div class="col-12 col-sm-5">
 					<TitleH4 :title4="title4" />
-					<pre class="container" hiddens>{{ $data }}</pre>
+					<pre class="container" hidden>{{ $data }}</pre>
 				</div>
 			</div>
 		</div>

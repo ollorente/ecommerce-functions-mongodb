@@ -18,7 +18,6 @@
 				aria-controls="navbarHeader"
 				aria-expanded="false"
 				aria-label="Toggle navigation"
-				style="margin-right: -1rem"
 			>
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -75,9 +74,10 @@ export default {
 	methods: {
 		async goToSearch() {
 			const Q = this.q
+			const search = this.$route.params.store ? `/${this.$route.params.store}` : ''
 
 			this.q = null
-			this.$router.replace(`/buscar?q=${Q}`)
+			this.$router.replace(`${search}/buscar?q=${Q}`)
 		},
 	},
 }
@@ -91,6 +91,7 @@ export default {
 .navbar-light .navbar-toggler {
 	color: rgba(0, 0, 0, 0.55);
 	border: 0;
+	margin-right: -0.5rem
 }
 
 .navbar-light .navbar-toggler:focus {

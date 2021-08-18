@@ -128,7 +128,7 @@ export default {
 .navbar-light .navbar-toggler {
 	color: rgba(0, 0, 0, 0.55);
 	border: 0;
-	margin-right: -1rem;
+	margin-right: -0.5rem;
 }
 
 .navbar-light .navbar-toggler:focus {

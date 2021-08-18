@@ -27,29 +27,4 @@ export default {
 }
 </script>
 
-<style scoped>
-form {
-	width: 100%;
-	margin-left: var(--unit);
-	padding: var(--unit);
-	background: var(--white);
-	border: solid 1px calc(var(--light) / 2);
-	/* border-radius: calc(var(--unit) / 2); */
-	display: flex;
-	align-items: center;
-}
-
-form i {
-	margin-right: var(--unit);
-}
-
-input {
-	width: 100%;
-	border: 0;
-}
-
-input:focus {
-	border: 0;
-	outline: none;
-}
-</style>
+<style scoped></style>

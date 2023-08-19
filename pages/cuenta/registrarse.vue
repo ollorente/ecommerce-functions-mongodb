@@ -369,7 +369,7 @@
 					</form>
 				</div>
 				<div class="col-12 col-sm-5">
-					<TitleH4 :title4="title4" />
+					<Aside />
 					<pre class="container" hidden>{{ $data }}</pre>
 				</div>
 			</div>
@@ -378,6 +378,7 @@
 </template>
 
 <script>
+import Aside from '~/components/AtomicDesign/Molecules/Aside'
 import TitleH1 from '~/components/AtomicDesign/Atoms/TitleH1'
 import TitleH4 from '~/components/AtomicDesign/Atoms/TitleH4'
 
@@ -400,6 +401,7 @@ export default {
 	},
 	name: 'FormLogup',
 	components: {
+		Aside,
 		TitleH1,
 		TitleH4,
 	},

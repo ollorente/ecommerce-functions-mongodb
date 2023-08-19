@@ -1,8 +1,8 @@
-const bcrypt = require('bcryptjs')
 const md5 = require('md5')
 
 const UserModel = require('../model')
 const UserDTO = require('../dto')
+const encryptPassword = require('../../../utils/encryptPassword')
 
 module.exports = async (req, res, next) => {
   const { user } = req.params
@@ -36,14 +36,7 @@ module.exports = async (req, res, next) => {
   try {
     if (userAuth._id.toString() === personData._id.toString()) {
       if (update.password) {
-        /* Hash password */
-        const salt = await bcrypt.genSalt(10)
-        const hashedPassword = await bcrypt.hash(
-          update.password,
-          salt
-        )
-
-        update.password = hashedPassword
+        update.password = encryptPassword(password)
       }
 
       if (update.email) {

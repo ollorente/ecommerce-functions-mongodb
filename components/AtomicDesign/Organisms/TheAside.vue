@@ -518,7 +518,7 @@
 
 <script>
 export default {
-  name: 'Aside',
+  name: 'TheAside',
 }
 </script>
 

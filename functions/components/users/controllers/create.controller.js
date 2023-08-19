@@ -1,9 +1,9 @@
-const bcrypt = require('bcryptjs')
 const md5 = require('md5')
 
 const UserModel = require('../model')
 const UserDTO = require('../dto')
 const { registerValidation } = require('../../../utils/validation')
+const encryptPassword = require('../../../utils/encryptPassword')
 
 module.exports = async (req, res, next) => {
   const {
@@ -42,15 +42,11 @@ module.exports = async (req, res, next) => {
     })
   }
 
-  /* Hash password */
-  const salt = await bcrypt.genSalt(10)
-  const hashedPassword = await bcrypt.hash(password, salt)
-
   const newData = new UserModel({
     name,
     username: username.trim(),
     email: email.toLowerCase().trim(),
-    password: hashedPassword,
+    password: encryptPassword(password),
     gravatar: md5(req.body.email.toLowerCase().trim()),
     phone,
     isNewsletter,
